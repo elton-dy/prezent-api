@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from .models import User, Conversation, Message
 from .serializers import UserSerializer, ConversationSerializer, MessageSerializer
 from .ai_handler import conversational_chat
-
+from rest_framework.response import Response
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -53,5 +53,6 @@ class MessageViewSet(viewsets.ModelViewSet):
                 text=ai_response,
                 type="AI"
             )
+            return Response({'AI Response': ai_response}, status=201)
 
         return response  # Retournez la réponse HTTP originale
