@@ -21,7 +21,7 @@ class Conversation(models.Model):
 
 class Message(models.Model):
     TYPE_CHOICES = [
-        ('User', 'User'),
+        ('Human', 'Human'),
         ('AI', 'AI'),
     ]
     conversation = models.ForeignKey(Conversation, on_delete=models.CASCADE)

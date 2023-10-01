@@ -7,7 +7,6 @@ from my_app_api.models import Message
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
-from langchain.memory import ChatMessageHistory
 
 
 os.environ["OPENAI_API_KEY"] = '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'
@@ -21,6 +20,9 @@ class DatabaseMemory:
         history = [(f"{msg.type}: {msg.text}") for msg in messages]
         formatted_history = '\n'.join(history)
         return formatted_history
+
+
+
 
 def set_custom_prompt():
     custom_prompt_template = """
@@ -50,7 +52,7 @@ def load_llm():
     llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
     return llm
 
-def retrieval_qa_chain(llm,db,history):
+def retrieval_qa_chain(llm,db,history,conversation):
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
         chain_type="stuff",
@@ -60,37 +62,36 @@ def retrieval_qa_chain(llm,db,history):
         chain_type_kwargs={
             "verbose": True,
             "prompt": set_custom_prompt(),
-            "memory": get_memory(history)
+            "memory": get_memory(conversation)
         }
     )
     return qa_chain
 
-def get_memory(history):
-
+def get_memory(conversation):
+    db_memory = DatabaseMemory(conversation)
     return ConversationBufferMemory(
             memory_key="history",
             input_key="question",
-            chat_memory=history)
+            chat_memory=db_memory.get_history())
 
 def qa_bot(conversation, history):
     db = get_vectorstore()
     llm = load_llm()
-    qa = retrieval_qa_chain(llm, db, history)
+    qa = retrieval_qa_chain(llm, db, history,conversation)
     return qa
 
 def final_result(query, conversation, db_memory):
     formatted_history = db_memory.get_history()  # Get the conversation history
     # Split the formatted history into individual messages
     history_lines = formatted_history.split('\n')
-
-    history = ChatMessageHistory()
     # Convert the history lines into tuples or dictionaries
-    for line in history_lines:
-        speaker, message = line.split(": ", 1)  # Sépare le speaker et le message
-        if speaker == 'AI':
-            history.add_ai_message(message)
-        elif speaker == 'Human':
-            history.add_user_message(message)
+    history = [('bonjour', "Bonjour! Comment puis-je vous aider aujourd'hui?"), ('je cherche un cadeau', 'Bien sûr! Je serais ravi de vous aider à trouver le cadeau parfait. Pour commencer, pour qui recherchez-vous ce cadeau?')]
+#     for line in history_lines:
+#         speaker, message = line.split(': ', 1)
+#         history.append((speaker, message))
+
+    print('question')
+    print(query)
 
     qa_result = qa_bot(conversation, history)  # Pass the history to qa_bot
     response = qa_result.run({"query": query})
