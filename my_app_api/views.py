@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .models import User, Conversation, Message
-from .serializers import UserSerializer, ConversationSerializer, MessageSerializer
+from .models import User, Conversation, Message, Produit, Favori
+from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, ProduitSerializer, FavoriSerializer
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
 
@@ -58,3 +58,14 @@ class MessageViewSet(viewsets.ModelViewSet):
             return Response({'AI Response': ai_response}, status=201)
 
         return response  # Retournez la réponse HTTP originale
+
+class ProduitViewSet(viewsets.ModelViewSet):
+    queryset = Produit.objects.all()
+    serializer_class = ProduitSerializer
+
+class FavoriViewSet(viewsets.ModelViewSet):
+    queryset = Favori.objects.all()
+    serializer_class = FavoriSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)

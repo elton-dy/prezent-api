@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Conversation, Message
+from .models import User, Conversation, Message, Produit, Favori
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -29,3 +29,15 @@ class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
         fields = '__all__'  # Sérialise tous les champs du modèle Message
+
+class ProduitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Produit
+        fields = '__all__'  # Sérialise tous les champs du modèle Message
+
+class FavoriSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Favori
+        fields = '__all__'  # Sérialise tous les champs du modèle Message
+    user = serializers.StringRelatedField()
+    produit = ProduitSerializer()
