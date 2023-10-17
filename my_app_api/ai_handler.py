@@ -8,9 +8,9 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ChatMessageHistory
+from decouple import config
 
-
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = config('OPENAI_API_KEY')
 
 class DatabaseMemory:
     def __init__(self, conversation):
