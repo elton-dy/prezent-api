@@ -5,11 +5,12 @@ from .models import User, Conversation, Message, Produit, Favori
 from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, ProduitSerializer, FavoriSerializer
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
+from rest_framework import permissions
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
+#     permission_classes = [permissions.IsAuthenticated]
 
 
 class ConversationViewSet(viewsets.ModelViewSet):
