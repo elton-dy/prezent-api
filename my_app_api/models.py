@@ -3,12 +3,32 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractBaseUser
 import uuid
 
+class Visiteur(models.Model):
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+
+    def __str__(self):
+        return str(self.uuid)
+
 class Conversation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    visiteur = models.ForeignKey(Visiteur, on_delete=models.CASCADE, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Conversation {self.id} with {self.user}'
+        if self.user:
+            return f'Conversation {self.id} with registered user {self.user}'
+        elif self.visiteur:
+            return f'Conversation {self.id} with visitor {self.visiteur}'
+        else:
+            return f'Conversation {self.id} without participant'
+
+    class Meta:
+        constraints = [
+            models.CheckConstraint(
+                check=models.Q(user__isnull=False) | models.Q(visiteur__isnull=False),
+                name='conversation_has_either_user_or_visitor'
+            )
+        ]
 
 class Message(models.Model):
     TYPE_CHOICES = [
