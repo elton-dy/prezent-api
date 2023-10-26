@@ -5,6 +5,10 @@ import uuid
 
 class Visiteur(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    browser = models.CharField(max_length=255, null=True, blank=True)
+    os = models.CharField(max_length=255, null=True, blank=True)
+    device = models.CharField(max_length=255, null=True, blank=True)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
 
     def __str__(self):
         return str(self.uuid)
