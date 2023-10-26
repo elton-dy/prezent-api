@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .models import User, Conversation, Message, Produit, Favori
-from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, ProduitSerializer, FavoriSerializer
+from .models import User, Conversation, Message, Produit, Favori , Visiteur
+from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, ProduitSerializer, FavoriSerializer , VisiteurSerializer
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
 from rest_framework import permissions
@@ -18,6 +18,22 @@ class ConversationViewSet(viewsets.ModelViewSet):
     serializer_class = ConversationSerializer
 
     def create(self, request, *args, **kwargs):
+        # Déterminez si la conversation est initiée par un utilisateur enregistré ou un visiteur
+        if request.user.is_authenticated:
+            request.data['user'] = request.user.id
+        else:
+            user_agent = parse(request.META['HTTP_USER_AGENT'])
+            ip_address = self.get_client_ip(request)
+            visiteur, created = Visiteur.objects.get_or_create(
+                defaults={
+                    'ip_address': ip_address,
+                    'browser': user_agent.browser.family,
+                    'os': user_agent.os.family,
+                    'device': user_agent.device.family
+                }
+            )
+            request.data['visiteur'] = visiteur.id
+
         response = super().create(request, *args, **kwargs)
         if response.status_code == 201:
             conversation = self.serializer_class().Meta.model.objects.get(pk=response.data['id'])
@@ -27,6 +43,14 @@ class ConversationViewSet(viewsets.ModelViewSet):
                 type="AI"
             )
         return response
+
+    def get_client_ip(self, request):
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
 
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
@@ -59,6 +83,13 @@ class MessageViewSet(viewsets.ModelViewSet):
             return Response({'AI Response': ai_response}, status=201)
 
         return response  # Retournez la réponse HTTP originale
+
+class VisiteurViewSet(viewsets.ModelViewSet):
+    queryset = Visiteur.objects.all()
+    serializer_class = VisiteurSerializer
+
+    def perform_create(self, serializer):
+        serializer.save()
 
 class ProduitViewSet(viewsets.ModelViewSet):
     queryset = Produit.objects.all()

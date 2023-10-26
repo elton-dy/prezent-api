@@ -26,6 +26,7 @@ router.register(r'conversations', ConversationViewSet)
 router.register(r'messages', MessageViewSet)
 router.register(r'produits', ProduitViewSet)
 router.register(r'favoris', FavoriViewSet)
+router.register(r'favoris', FavoriViewSet)
 
 urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
