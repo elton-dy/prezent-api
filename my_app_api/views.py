@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .models import User, Conversation, Message, Produit, Favori , Visiteur
-from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, ProduitSerializer, FavoriSerializer , VisiteurSerializer
+from .models import User, Conversation, Message, Produit, Favori , Visitor
+from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, ProduitSerializer, FavoriSerializer , VisitorSerializer
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
 from rest_framework import permissions
@@ -24,7 +24,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
         else:
             user_agent = parse(request.META['HTTP_USER_AGENT'])
             ip_address = self.get_client_ip(request)
-            visiteur, created = Visiteur.objects.get_or_create(
+            visitor, created = Visitor.objects.get_or_create(
                 defaults={
                     'ip_address': ip_address,
                     'browser': user_agent.browser.family,
@@ -32,7 +32,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
                     'device': user_agent.device.family
                 }
             )
-            request.data['visiteur'] = visiteur.id
+            request.data['visitor'] = visitor.id
 
         response = super().create(request, *args, **kwargs)
         if response.status_code == 201:
@@ -84,9 +84,9 @@ class MessageViewSet(viewsets.ModelViewSet):
 
         return response  # Retournez la réponse HTTP originale
 
-class VisiteurViewSet(viewsets.ModelViewSet):
-    queryset = Visiteur.objects.all()
-    serializer_class = VisiteurSerializer
+class VisitorViewSet(viewsets.ModelViewSet):
+    queryset = Visitor.objects.all()
+    serializer_class = VisitorSerializer
 
     def perform_create(self, serializer):
         serializer.save()
