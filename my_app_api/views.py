@@ -6,6 +6,11 @@ from .serializers import UserSerializer, ConversationSerializer, MessageSerializ
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
 from rest_framework import permissions
+from user_agents import parse
+from rest_framework import status
+from django.shortcuts import get_object_or_404
+from django.core.exceptions import ValidationError
+
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -18,21 +23,27 @@ class ConversationViewSet(viewsets.ModelViewSet):
     serializer_class = ConversationSerializer
 
     def create(self, request, *args, **kwargs):
-        # Déterminez si la conversation est initiée par un utilisateur enregistré ou un visiteur
-        if request.user.is_authenticated:
-            request.data['user'] = request.user.id
-        else:
-            user_agent = parse(request.META['HTTP_USER_AGENT'])
-            ip_address = self.get_client_ip(request)
-            visitor, created = Visitor.objects.get_or_create(
-                defaults={
-                    'ip_address': ip_address,
-                    'browser': user_agent.browser.family,
-                    'os': user_agent.os.family,
-                    'device': user_agent.device.family
-                }
-            )
+        # Déterminez si la conversation est initiée par un utilisateur ou un visiteur
+        if not request.user.is_authenticated:
+            # Générer ou récupérer l'UUID du visiteur
+            try:
+                visitor_uuid = request.data.get('visitor_uuid')
+                if visitor_uuid:
+                    visitor = get_object_or_404(Visitor, uuid=visitor_uuid)
+                    request.data['visitor'] = visitor.id
+                else:
+                    # Handle the case where visitor_uuid is not provided
+                    return Response({'error': 'Visitor UUID must be provided.'}, status=status.HTTP_400_BAD_REQUEST)
+            except ValidationError as e:
+                return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            except Visitor.DoesNotExist:
+                return Response({'error': 'No visitor found with the provided UUID.'}, status=status.HTTP_404_NOT_FOUND)
+
+
+            # Attribuez l'ID du visiteur à la conversation
             request.data['visitor'] = visitor.id
+        else:
+            request.data['user'] = request.user.id
 
         response = super().create(request, *args, **kwargs)
         if response.status_code == 201:
@@ -88,8 +99,25 @@ class VisitorViewSet(viewsets.ModelViewSet):
     queryset = Visitor.objects.all()
     serializer_class = VisitorSerializer
 
-    def perform_create(self, serializer):
-        serializer.save()
+    def create(self, request, *args, **kwargs):
+        ip_address = self.get_client_ip(request)
+        user_agent = parse(request.META['HTTP_USER_AGENT'])
+        visitor = Visitor.objects.create(
+            ip_address = ip_address,
+            browser = user_agent.browser.family,
+            os = user_agent.os.family,
+            device = user_agent.device.family
+        )
+        serializer = self.get_serializer(visitor)
+        return Response(serializer.data, status=201)
+
+    def get_client_ip(self, request):
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
 
 class ProduitViewSet(viewsets.ModelViewSet):
     queryset = Produit.objects.all()
