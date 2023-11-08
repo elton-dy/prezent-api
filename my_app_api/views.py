@@ -55,6 +55,16 @@ class ConversationViewSet(viewsets.ModelViewSet):
             )
         return response
 
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        # Assuming 'messages' is a reverse relation from Message to Conversation
+        messages = Message.objects.filter(conversation=instance)
+        message_serializer = MessageSerializer(messages, many=True)
+        response_data = serializer.data
+        response_data['messages'] = message_serializer.data
+        return Response(response_data)
+
     def get_client_ip(self, request):
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
