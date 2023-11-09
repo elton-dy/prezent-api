@@ -17,13 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from myapp.views import UserViewSet, ConversationViewSet, MessageViewSet
+from my_app_api.views import UserViewSet, ConversationViewSet, MessageViewSet,ProduitViewSet, FavoriViewSet , VisitorViewSet
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'conversations', ConversationViewSet)
 router.register(r'messages', MessageViewSet)
+router.register(r'produits', ProduitViewSet)
+router.register(r'favoris', FavoriViewSet)
+router.register(r'visitors', VisitorViewSet)
 
 urlpatterns = [
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', include(router.urls)),
 ]
