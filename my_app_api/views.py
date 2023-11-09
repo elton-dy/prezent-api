@@ -101,7 +101,7 @@ class MessageViewSet(viewsets.ModelViewSet):
                 text=ai_response,
                 type="AI"
             )
-            return Response({'AI Response': ai_response}, status=201)
+            return Response({'ai_response': ai_response, 'type': 'AI' }, status=201)
 
         return response  # Retournez la réponse HTTP originale
 
