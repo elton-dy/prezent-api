@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .models import User, Conversation, Message, Produit, Favori , Visitor
-from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, ProduitSerializer, FavoriSerializer , VisitorSerializer
+from .models import User, Conversation, Message, Product, Favori , Visitor
+from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, FavoriSerializer , VisitorSerializer , ProductSerializer
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
 from rest_framework import permissions
@@ -129,9 +129,9 @@ class VisitorViewSet(viewsets.ModelViewSet):
             ip = request.META.get('REMOTE_ADDR')
         return ip
 
-class ProduitViewSet(viewsets.ModelViewSet):
-    queryset = Produit.objects.all()
-    serializer_class = ProduitSerializer
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
 
 class FavoriViewSet(viewsets.ModelViewSet):
     queryset = Favori.objects.all()

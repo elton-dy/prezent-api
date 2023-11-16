@@ -24,10 +24,11 @@ class DatabaseMemory:
 
 def set_custom_prompt():
     custom_prompt_template = """
-    Répondez en français.
-    comporte toi comme un conseille qui aide a trouver le cadeau parfait, pose des question a l'utilisateur pour savoir quel cadeau proposer.
-    Utilisez d'abord l'historique de la conversation, puis le contexte.
-    Utilisez le contexte suivant (délimité par <ctx></ctx>) et l'historique de la conversation (délimité par <hs></hs>) pour répondre à la question :
+    Respond in French.
+    Act as an advisor to find the ideal gift. Ask specific voice questions to the user to identify the perfect gift, focusing on understanding the personality of the recipient.
+    First, base your suggestions on the conversation history, then on the context.
+    Use the following context (enclosed in <ctx></ctx>) and the conversation history (enclosed in <hs></hs>) to respond:
+    When a gift is chosen, present it like this: ['id' => 'gift id', 'reason' => 'why this gift is appropriate'].
     ------
     <ctx>
     {context}
@@ -47,7 +48,7 @@ def get_vectorstore():
     return Chroma(persist_directory="data/db/news", embedding_function=OpenAIEmbeddings())
 
 def load_llm():
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
+    llm = ChatOpenAI(model_name="gpt-4", temperature=0.4)
     return llm
 
 def retrieval_qa_chain(llm,db,history):
