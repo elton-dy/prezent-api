@@ -83,7 +83,7 @@ def final_result(query, conversation, db_memory):
     formatted_history = db_memory.get_history()  # Get the conversation history
     # Split the formatted history into individual messages
     history_lines = formatted_history.split('\n')
-
+    print('history: ',history_lines)
     history = ChatMessageHistory()
     # Convert the history lines into tuples or dictionaries
     for line in history_lines:
@@ -93,6 +93,15 @@ def final_result(query, conversation, db_memory):
         elif speaker == 'Human':
             history.add_user_message(message)
 
+#     for line in history_lines:
+#         if line.startswith("AI: "):
+#             # Extrait le message de l'IA en enlevant les 4 premiers caractères ("AI: ")
+#             message = line[4:]
+#             history.add_ai_message(message)
+#         elif line.startswith("Human: "):
+#             # Extrait le message de l'utilisateur en enlevant les 7 premiers caractères ("Human: ")
+#             message = line[7:]
+#             history.add_user_message(message)
     qa_result = qa_bot(conversation, history)  # Pass the history to qa_bot
     response = qa_result.run({"query": query})
     return response

@@ -10,7 +10,7 @@ from user_agents import parse
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
-
+import re
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -94,16 +94,33 @@ class MessageViewSet(viewsets.ModelViewSet):
 
         if response.status_code == 201:  # Si le message de l'utilisateur a été créé avec succès
             ai_response = conversational_chat(user_message, conversation)  # Obtenez la réponse de l'IA
-
+            product_id = self.extract_product_id(ai_response)
+            product_details = None
+            if product_id:
+                try:
+                    product = Product.objects.get(pk=product_id)
+                    product_serializer = ProductSerializer(product)
+                    product_details = product_serializer.data
+                except Product.DoesNotExist:
+                    product_details = {'error': 'Product not found'}
             # Créez le message de l'IA dans la base de données
             Message.objects.create(
                 conversation=conversation,
                 text=ai_response,
                 type="AI"
             )
-            return Response({'ai_response': ai_response, 'type': 'AI' }, status=201)
+            return Response({'ai_response': ai_response, 'type': 'AI','product_details': product_details }, status=201)
 
         return response  # Retournez la réponse HTTP originale
+
+    def extract_product_id(self,ai_response):
+            # Regex pour trouver un motif correspondant à l'ID de produit
+            # Par exemple, elle cherche des chaînes qui ressemblent à "'id' => '89'"
+            match = re.search(r"\'id\'\s*=>\s*'(\d+)'", ai_response)
+            if match:
+                # Retourne l'ID de produit trouvé
+                return match.group(1)
+            return None
 
 class VisitorViewSet(viewsets.ModelViewSet):
     queryset = Visitor.objects.all()
