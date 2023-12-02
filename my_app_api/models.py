@@ -15,6 +15,7 @@ class Visitor(models.Model):
 
 class Conversation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=255, null=True)
     visitor = models.ForeignKey(Visitor, on_delete=models.CASCADE, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 

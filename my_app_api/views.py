@@ -48,11 +48,17 @@ class ConversationViewSet(viewsets.ModelViewSet):
         response = super().create(request, *args, **kwargs)
         if response.status_code == 201:
             conversation = self.serializer_class().Meta.model.objects.get(pk=response.data['id'])
-            Message.objects.create(
+            initial_message = Message.objects.create(
                 conversation=conversation,
                 text="Bonjour ! Comment puis-je vous aider aujourd'hui ?",
                 type="AI"
             )
+
+            message_serializer = MessageSerializer(initial_message)
+
+            response_data = response.data
+            response_data['messages'] = [message_serializer.data]
+            return Response(response_data, status=status.HTTP_201_CREATED)
         return response
 
     def retrieve(self, request, *args, **kwargs):
