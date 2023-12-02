@@ -24,6 +24,8 @@ services:
       - POSTGRES_NAME=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - '8000:8000'
     # Les volumes de développement peuvent être retirés en production
     # volumes:
     #   - .:/api
