@@ -33,7 +33,7 @@ ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='localhost,127.0.0.1,[::1
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:9000",
-    "http://votredomaine.com",
+    "https://1-prezent.com",
     "http://172.22.0.2:5173",
     "http://172.21.0.2:5173",
 
