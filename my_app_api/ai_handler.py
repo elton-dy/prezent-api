@@ -24,10 +24,11 @@ class DatabaseMemory:
 
 def set_custom_prompt():
     custom_prompt_template = """
-    Répondez en français.
-    comporte toi comme un conseille qui aide a trouver le cadeau parfait, pose des question a l'utilisateur pour savoir quel cadeau proposer.
-    Utilisez d'abord l'historique de la conversation, puis le contexte.
-    Utilisez le contexte suivant (délimité par <ctx></ctx>) et l'historique de la conversation (délimité par <hs></hs>) pour répondre à la question :
+    Respond in French.
+    Act as an advisor to find the ideal gift. important ask specific voice questions to the user to identify the perfect gift, focusing on understanding the personality of the recipient and give only one gift at a time.
+    First, base your suggestions on the conversation history, then on the context.
+    Use the following context (enclosed in <ctx></ctx>) and the conversation history (enclosed in <hs></hs>) to respond,
+    When a gift is chosen,give the reason and give me juste the id about the product like this ['id' => 'gift id']. doesn't mention product id
     ------
     <ctx>
     {context}
@@ -47,7 +48,7 @@ def get_vectorstore():
     return Chroma(persist_directory="data/db/news", embedding_function=OpenAIEmbeddings())
 
 def load_llm():
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
+    llm = ChatOpenAI(model_name="gpt-4", temperature=0.4)
     return llm
 
 def retrieval_qa_chain(llm,db,history):
@@ -82,7 +83,7 @@ def final_result(query, conversation, db_memory):
     formatted_history = db_memory.get_history()  # Get the conversation history
     # Split the formatted history into individual messages
     history_lines = formatted_history.split('\n')
-
+    print('history: ',history_lines)
     history = ChatMessageHistory()
     # Convert the history lines into tuples or dictionaries
     for line in history_lines:
@@ -92,6 +93,15 @@ def final_result(query, conversation, db_memory):
         elif speaker == 'Human':
             history.add_user_message(message)
 
+#     for line in history_lines:
+#         if line.startswith("AI: "):
+#             # Extrait le message de l'IA en enlevant les 4 premiers caractères ("AI: ")
+#             message = line[4:]
+#             history.add_ai_message(message)
+#         elif line.startswith("Human: "):
+#             # Extrait le message de l'utilisateur en enlevant les 7 premiers caractères ("Human: ")
+#             message = line[7:]
+#             history.add_user_message(message)
     qa_result = qa_bot(conversation, history)  # Pass the history to qa_bot
     response = qa_result.run({"query": query})
     return response

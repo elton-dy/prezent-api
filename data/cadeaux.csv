@@ -1,160 +1,160 @@
-Nombre,Typologie cadeau,Cadeau,Lien,Tranche d'âge,Budget cible,Occasion,activités / centres d'intérêts,Relation ,Personnalité / Préférences,Genre
-1,Jeux,Playmobil,"https://www.google.com/shopping/product/358839921583145549?q=jeu+playmobil&sxsrf=APwXEdcZ4SEGZZ7H2cUPEHGx12jgykRHHg:1683555025363&biw=1920&bih=941&dpr=1&prds=eto:10674192526689488294_0,pid:11752353643451595943,rsk:PC_14486972065599239030&sa=X&ved=0ahUKEwj",6 - 12 ans,50 - 75 €,Anniversaire,N/A,Famille,N/A,Mixte
-,Jeux,Playmobil,"https://www.google.com/shopping/product/358839921583145549?q=jeu+playmobil&sxsrf=APwXEdcZ4SEGZZ7H2cUPEHGx12jgykRHHg:1683555025363&biw=1920&bih=941&dpr=1&prds=eto:10674192526689488294_0,pid:11752353643451595943,rsk:PC_14486972065599239030&sa=X&ved=0ahUKEwj",6 - 12 ans,50 - 75 €,Noël,N/A,Famille,N/A,Mixte
-2,Livre,Petit Ours Brun,https://www.cultura.com/p-ma-premiere-bibliotheque-petit-ours-brun-9791036349744.html,0 - 6 ans,5 - 20 €,Anniversaire,N/A,Famille,N/A,Mixte
-,Livre,Petit Ours Brun,https://www.cultura.com/p-ma-premiere-bibliotheque-petit-ours-brun-9791036349744.html,0 - 6 ans,5 - 20 €,Noël,N/A,Famille,N/A,Mixte
-3,Livre,Elles,https://www.fnac.com/a15584412/Elles-Tome-1-Elles-La-nouvelle-s-Kid-Toussaint?oref=00000000-0000-0000-0000-000000000000&Origin=SEA_GOOGLE_PLA_BOOKS,12 - 18 ans,5 - 20 €,Anniversaire,N/A,Famille,N/A,Fille
-,Livre,Elles,https://www.fnac.com/a15584412/Elles-Tome-1-Elles-La-nouvelle-s-Kid-Toussaint?oref=00000000-0000-0000-0000-000000000000&Origin=SEA_GOOGLE_PLA_BOOKS,12 - 18 ans,5 - 20 €,Noël,N/A,Famille,N/A,Fille
-4,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Anniversaire,N/A,Famille,Made in France,Mixte
-,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Noël,N/A,Amis,N/A,Mixte
-,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Naissance,N/A,Amis,Made in France,Mixte
-5,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-Famille-Disney/dp/B0013F4LZ6/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle+enfant&s=toys&sr=1-7,6 - 12 ans,5 - 20 €,Anniversaire,Disney,Famille,N/A,Mixte
-,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-Famille-Disney/dp/B0013F4LZ6/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle+enfant&s=toys&sr=1-7,6 - 12 ans,5 - 20 €,Noël,Disney,Famille,N/A,Mixte
-,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-Armoire-Cuisine/dp/B00B2IIR3G/ref=sr_1_4?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle&s=toys&sr=1-4,12 - 18 ans,5 - 20 €,Noël,Jeux de société,Famille,Aime les activités relaxantes,Mixte
-,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-Armoire-Cuisine/dp/B00B2IIR3G/ref=sr_1_4?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle&s=toys&sr=1-4,12 - 18 ans,5 - 20 €,Anniversaire,Jeux de société,Famille,Aime les défis,Mixte
-,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-%C3%89toil%C3%A9e-Pi%C3%A8ces/dp/B0029QB53E/ref=sr_1_15?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle&s=toys&sr=1-15,60 ans + ,20 - 35 €,Noël,Jeux de société,Famille,Aime les activités relaxantes,Mixte
-,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-%C3%89toil%C3%A9e-Pi%C3%A8ces/dp/B0029QB53E/ref=sr_1_15?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle&s=toys&sr=1-15,60 ans + ,20 - 35 €,Anniversaire,Jeux de société,Famille,Aime les défis,Mixte
-6,Activité,SPA pour 2,,28 - 40 ans,100 € +,Mariage,Détente,Mixte,N/A,Mixte
-7,Vêtement,Sweat,https://www.zalando.fr/tommy-hilfiger-essential-unisex-sweatshirt-white-to126k01p-a11.html,12 - 18 ans,50 - 75 €,Noël,Marques,Famille,S'habiller décontracté,Garçon
-,Vêtement,Sweat,https://www.zalando.fr/jack-and-jones-jorhide-crew-neck-sweatshirt-oatmeal-ja222s165-b11.html,18 - 28 ans,35 - 50 €,Anniversaire,Sport,Amis,S'habiller décontracté,Garçon
-,Vêtement,Sweat,https://www.zalando.fr/jack-and-jones-jorhide-crew-neck-sweatshirt-oatmeal-ja222s165-b11.html,18 - 28 ans,35 - 50 €,Saint-Valentin,Voyager,Amoureux,S'habiller décontracté,Garçon
-8,Vêtement,Chemise,https://www.zalando.fr/mango-chemise-khaki-m9122d2g1-n11.html,18 - 28 ans,35 - 50 €,Anniversaire,Mode,Amis,Aime bien s'habiller,Garçon
-,Vêtement,Chemise,https://www.zalando.fr/mango-chemise-khaki-m9122d2g1-n11.html,18 - 28 ans,35 - 50 €,Noël,Mode,Amis,Aime bien s'habiller,Garçon
-,Vêtement,Chemise,https://www.zalando.fr/mango-chemise-khaki-m9122d2g1-n11.html,18 - 28 ans,35 - 50 €,Saint-Valentin,Mode,Amis,Aime bien s'habiller,Garçon
-,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,28 - 40 ans,50 - 75 €,Anniversaire,Mode,Amis,Aime bien s'habiller,Garçon
-,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,28 - 40 ans,50 - 75 €,Noël,Mode,Amis,Aime bien s'habiller,Garçon
-,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,28 - 40 ans,50 - 75 €,Saint-Valentin,Mode,Amis,Aime bien s'habiller,Garçon
-,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,40 - 50 ans,50 - 75 €,Noël,Mode,Amis,Aime bien s'habiller,Garçon
-,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,40 - 50 ans,50 - 75 €,Anniversaire,Mode,Amis,Aime bien s'habiller,Garçon
-,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,50 - 60 ans,50 - 75 €,Noël,Mode,Amis,Aime bien s'habiller,Garçon
-,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,50 - 60 ans,50 - 75 €,Anniversaire,Mode,Amis,Aime bien s'habiller,Garçon
-9,Livre,Manga,https://www.amazon.fr/One-piece-originale-ODA-Eiichir%C3%B4/dp/2723488527/ref=sr_1_2?keywords=one+piece+manga&s=books&sr=1-2,12 - 18 ans,5 - 20 €,Noël,Lecture,Famille,N/A,Mixte
-,Livre,Manga,https://www.amazon.fr/One-piece-originale-ODA-Eiichir%C3%B4/dp/2723488527/ref=sr_1_2?keywords=one+piece+manga&s=books&sr=1-2,12 - 18 ans,5 - 20 €,Anniversaire,BD,,N/A,Mixte
-10,Activité,Place de concert,https://www.fnacspectacles.com/artist/aya-nakamura/aya-nakamura-3285145/?affiliate=FS8,18 - 28 ans,50 - 75 €,Anniversaire,Musique,Amis,N/A,Mixte
-,Activité,Place de concert,https://www.fnacspectacles.com/artist/chinese-man/?affiliate=FS8,28 - 40 ans,35 - 50 €,Saint-Valentin,Musique,Amis,N/A,Mixte
-11,Activité,Place d'opéra / musique classique,https://www.fnacspectacles.com/artist/lac-des-cygnes-ballet-orchestre-2023/le-lac-des-cygnes-ballet-orchestre-3193993/,50 - 60 ans,50 - 75 €,Noël,Musique classique,Famille,N/A,Mixte
-11,Activité,Place d'opéra / musique classique,https://www.fnacspectacles.com/artist/lac-des-cygnes-ballet-orchestre-2023/le-lac-des-cygnes-ballet-orchestre-3193993/,50 - 60 ans,50 - 75 €,Anniversaire,Musique classique,Famille,N/A,Mixte
-12,Equipement sportif,Gym ball,https://www.amazon.fr/Sveltus-Gymball-75-cm/dp/B073GR744S/ref=sr_1_9?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=gym+ball&sr=8-9,18 - 28 ans,5 - 20 €,Anniversaire,Sport,Famille,Bien-être,Fille
-,Equipement sportif,Gym ball,https://www.amazon.fr/Sveltus-Gymball-75-cm/dp/B073GR744S/ref=sr_1_9?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=gym+ball&sr=8-9,18 - 28 ans,5 - 20 €,,Yoga,Amis,Se détendre,
-13,Jeux,Boules de pétanque,https://www.amazon.fr/Garden-Games-p%C3%A9tanque-Sacoche-Transport/dp/B00BAP2DMC/ref=sr_1_6?keywords=boules+de+p%C3%A9tanque&sr=8-6,28 - 40 ans,50 - 75 €,Anniversaire,Activités en plein air,Amis,Sociable,Garçon
-,Jeux,Boules de pétanque,https://www.amazon.fr/Garden-Games-p%C3%A9tanque-Sacoche-Transport/dp/B00BAP2DMC/ref=sr_1_6?keywords=boules+de+p%C3%A9tanque&sr=8-6,28 - 40 ans,50 - 75 €,Noël,Activités en plein air,Amis,Sociable,Garçon
-14,Equipement sportif,Set de golf,https://www.amazon.fr/Callaway-2019-pour-Complet-12-pi%C3%A8ces-Package/dp/B07H2HQJR5/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=set+de+golf&sr=8-6,28 - 40 ans,100 € +,Noël,Activités en plein air,Famille,N/A,Garçon
-,Equipement sportif,Set de golf,https://www.amazon.fr/Callaway-2019-pour-Complet-12-pi%C3%A8ces-Package/dp/B07H2HQJR5/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=set+de+golf&sr=8-6,28 - 40 ans,100 € +,Noël,Activités en plein air,Famille,N/A,Garçon
-15,Tech,Ecouteurs bluetooth,https://www.amazon.fr/%C3%89couteurs-Bluetooth-lntelligent-Automatique-Oreillette/dp/B0BS16VF7K/ref=sr_1_3?keywords=%C3%A9couteur+bluetooth&refinements=p_36%3A680943011&rnid=389179011&s=electronics&sr=1-3,18 - 28 ans,5 - 20 €,Anniversaire,Musique,Famille,N/A,Mixte
-,Tech,Ecouteurs bluetooth,https://www.amazon.fr/Ecouteurs-Bluetooth-%C3%89couteurs-R%C3%A9duction-Contr%C3%B4le/dp/B0BP7HKMNH/ref=sr_1_6?keywords=%C3%A9couteur+bluetooth&refinements=p_36%3A680944011&rnid=389179011&s=electronics&sr=1-6,28 - 40 ans,20 - 35 €,Noël,Sport,Amoureux/se,N/A,Mixte
-16,Utilitaire,Trottinette électrique,https://www.amazon.fr/Xiaomi-trottinette-%C3%A9lectrique-autonomie-antid%C3%A9rapants/dp/B0B5PLRCLK/ref=sr_1_6?keywords=trottinette+%C3%A9lectrique&sr=8-6,18 - 28 ans,100 € +,Noël,N/A,Famille,Aime se balader,Mixte
-17,Equipement sportif,Ballon de basket,https://www.amazon.fr/Wilson-Mini-Basketball-caoutchouc-Orange/dp/B01MUPZEZE/ref=sr_1_5?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=ballon+de+basket&sr=8-5,12 - 18 ans,5 - 20 €,Anniversaire,Sport,Famille,N/A,Garçon
-18,Equipement sportif,Kit badmington,https://www.amazon.fr/Jeu-Badminton-Joueurs-Ext%C3%A9rieur-Plein/dp/B011PONRPY/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=kit+badminton&sr=8-6,12 - 18 ans,5 - 20 €,Anniversaire,Sport,Famille,N/A,Garçon
-,Equipement sportif,Kit badmington,https://www.amazon.fr/Jeu-Badminton-Joueurs-Ext%C3%A9rieur-Plein/dp/B011PONRPY/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=kit+badminton&sr=8-6,18 - 28 ans,20 - 35 €,Noël,Activités en plein air,,N/A,Garçon
-19,Carte cadeau,Carte cadeau,FNAC,18 - 28 ans,20 - 35 €,Anniversaire,Culture ,Famille,Exigeant,Mixte
-,Carte cadeau,Carte cadeau,AMAZON,28 - 40 ans,35 - 50 €,Travail,N/A,Collègue,Exigeant,Mixte
-20,Beauté / bien-être,Coffret cosmétique,https://www.amazon.fr/Marilou-Bio-Hydratation-D%C3%A9fatigant-D%C3%A9maquillant/dp/B09SV934D4/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=coffret+cosm%C3%A9tique&refinements=p_36%3A211725031&rnid=211723031&s=beauty&sr=1-7,18 - 28 ans,20 - 35 €,Anniversaire,Mode,Famille,Prend soin d'elle,Fille
-,Beauté / bien-être,Coffret cosmétique,https://www.amazon.fr/%C3%89NERGISANT-Nurture-Nature-essentielles-aromath%C3%A9rapie/dp/B09HXRGC14/ref=sr_1_39?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=coffret+cosm%C3%A9tique&refinements=p_36%3A211726031&rnid=211723031&s=beauty&sr=1-39,28 - 40 ans,35 - 50 €,Noël,Maquillage,Amis,Prend soin d'elle,Fille
-21,Utilitaire,Robot cuisine,https://www.amazon.fr/W%C3%ABasy-Multifonction-Culinaire-Professionnel-pr%C3%A9programm%C3%A9es/dp/B07TKLMPJN/ref=sr_1_4?keywords=robot+cuisine&refinements=p_36%3A84665031&rnid=67553031&s=kitchen&sr=1-4,18 - 28 ans,50 - 75 €,Noël,Cuisine,Famille,Aime faire plaisir aux autres,Fille
-,Utilitaire,Robot cuisine,https://www.amazon.fr/Robot-Multifonction-Desire-24730-56-Russell/dp/B079TPV7SH/ref=sr_1_5?keywords=robot+cuisine&refinements=p_36%3A7500-10000&rnid=67553031&s=kitchen&sr=1-5,28 - 40 ans,75 - 100 €,Noël,Cuisine,,,Fille
-,Utilitaire,Robot cuisine,https://www.amazon.fr/Bosch-Electrom%C3%A9nager-MC812M844-MultiTalent-MC812M44/dp/B07HPRQJL1/ref=sr_1_4?keywords=robot+cuisine&refinements=p_36%3A10000-30000&rnid=67553031&s=kitchen&sr=1-4,40 - 50 ans,100 € +,Noël,Cuisine,,,Fille
-22,Livre,Livre de cuisine,https://www.amazon.fr/NOPI-Ottolenghi-Yotam-Ottolenghi/dp/2011356830/ref=sr_1_1?keywords=ottolenghi&sr=8-1,28 - 40 ans,35 - 50 €,Anniversaire,Cuisine,Amis,Aime recevoir chez elle,Fille
-,Livre,Livre de cuisine,https://www.amazon.fr/Manuel-cuisinier-amateur-recettes-techniques/dp/2812321342/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=livre+cuisine&refinements=p_36%3A2000-3500&rnid=389153011&sr=8-6,18 - 28 ans,20 - 35 €,Anniversaire,Cuisine,Famille,N/A,
-23,Art,Kit peinture / dessin,https://www.amazon.fr/Artina-Mallette-Leonardo-Ensemble-acrylique/dp/B016WPLWA8/ref=sr_1_13?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=kit+peinture&refinements=p_36%3A2000-3500&rnid=67553031&sr=8-13,12 - 18 ans,20 - 35 €,Noël,Art,Famille,Créatif,Mixte
-24,Vêtement,Pull Saint-James,https://fr.saint-james.com/collections/homme/products/pull-marin-uni-matelot-coupe-ajustee-pure-laine-vierge-tango,28 - 40 ans,100 € +,Noël,Mode,Famille,Made in France,Garçon
-25,Livre,Petit Ours Brun,https://www.cultura.com/p-ma-premiere-bibliotheque-petit-ours-brun-9791036349744.html,0 - 6 ans,5 - 20 €,Anniversaire,N/A,Famille,N/A,Mixte
-,Livre,Petit Ours Brun,https://www.cultura.com/p-ma-premiere-bibliotheque-petit-ours-brun-9791036349744.html,0 - 6 ans,5 - 20 €,Noël,N/A,Famille,N/A,Mixte
-26,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Anniversaire,N/A,Famille,Made in France,Mixte
-,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Noël,N/A,Famille,N/A,Mixte
-,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Naissance,N/A,Amis,Made in France,Mixte
-27,Utilitaire,Bavoir tablier,https://www.petitsixieme.com/repas/4063-konges-slojd-bavoirs-bebe-cherry-petit-sixieme.html,0 - 6 ans,20 - 35 €,Naissance,N/A,Mixte,Made in France,
-28,Livre,Livre d'apprentissage Joe ,https://www.amazon.fr/dp/293041782X/ref=cm_gf_aBN_d_bt30_p0_e0_qd0_GuU2lLvN99JeJob6stjn,0 - 6 ans,20 - 35 €,Naissance,N/A,,N/A,Mixte
-29,Utilitaire,Couverture bébé,https://www.amazon.fr/dp/B086QNQXRJ/ref=cm_gf_aBN_d_bt30_p0_e0_qd1_e3yjtOGhedP3Fi6wc9cr,0 - 6 ans,20 - 35 €,Naissance,N/A,,N/A,Mixte
-30,Peluche,Peluche oreiller,https://www.amazon.fr/dp/B092NJ7JSN/ref=cm_gf_aBN_d_bf30_bt50_p0_e0_qd0_xeXokXXOM7n8rTW4bYJw,0 - 6 ans,35 - 50 €,Naissance,N/A,,N/A,Mixte
-31,Utilitaire,Baignoire pour bébé pliable,https://www.amazon.fr/dp/B0BRSDMMWM/ref=cm_gf_aBN_d_bf30_bt50_p0_e0_qd0_ytymAMaA5XORsyC0AQaa,0 - 6 ans,35 - 50 €,Naissance,N/A,,N/A,Mixte
-32,Utilitaire,Mobile Musical,https://www.amazon.fr/dp/B0B5XHKTHW/ref=cm_gf_aBN_d_bf30_bt50_p0_e0_qd2_gQrPjzD3yiqXD4v2mQnW,0 - 6 ans,35 - 50 €,Naissance,N/A,,N/A,Mixte
-33,Utilitaire,Tapis de jeu,https://www.amazon.fr/dp/B0BK5J9XT7/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd0_DrFgDftxnRH1F8Lxv26Q,0 - 6 ans,50 - 75 €,Naissance,N/A,,N/A,Mixte
-34,Utilitaire,Rangement pour jouet,https://www.amazon.fr/dp/B09NS4BJW2/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd0_gxs9ajbCrqV0jVEgtlGP,0 - 6 ans,50 - 75 €,Naissance,N/A,,N/A,Mixte
-35,Peluche,Peluche géante,https://www.amazon.fr/dp/B09XBK4SZY/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd0_Id7E252dNGUbLsIan9fU,0 - 6 ans,50 - 75 €,Naissance,N/A,,N/A,Mixte
-36,Utilitaire,Berceau,https://www.amazon.fr/dp/B09JCMVW61/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd1_5HTqNIzAT2muC3XZbMns,28-40 ans,75 - 100 €,Naissance,N/A,,N/A,Mixte
-37,Utilitaire,Cuiseur multi-fonction,https://www.amazon.fr/dp/B09Z1TLFZ8/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd1_mSS9U52jNOfJw7xQxp79,28-40 ans,75 - 100 €,Naissance,N/A,,N/A,Mixte
-38,Utilitaire,Chaise haute,https://www.amazon.fr/dp/B08MBC4WQ9/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd1_VEKRXPrOGHK0Y3VEzIn9 ,28-40 ans,75 - 100 €,Naissance,N/A,,N/A,Mixte
-39,Utilitaire,Landeau,https://www.amazon.fr/dp/B00Q4PEXKS/ref=cm_gf_aBN_d_bf100_bt200_p0_e0_qd0_Al7LgVgJVCTNayQRCFKK,28-40 ans,100 € +,Naissance,N/A,,N/A,Mixte
-40,Utilitaire,Robot multifonction bébé,https://www.amazon.fr/dp/B00CWXWB6O/ref=cm_gf_aBN_d_bf100_bt200_p0_e0_qd0_lV8ytoCOGOUjlZcjvXcy,28-40 ans,100 € +,Naissance,N/A,,N/A,Mixte
-41,Utilitaire,Table à manger avec baignoire,https://www.amazon.fr/dp/B00133UK2Q/ref=cm_gf_aBN_d_bf100_bt200_p0_e0_qd0_CqIMGiShsFbswbKNFOfB,28-40 ans,100 € +,Naissance,N/A,,N/A,Mixte
-42,Déco,Carte lieu de rencontre,https://positiveprints.com/fr/produit/carte-lieu-de-rencontre/,28 - 40 ans,35 - 50 €,Mariage,N/A,,N/A,Fille
-,Tech,Airpods Pro,https://www.backmarket.fr/fr-fr/p/airpods-pro-avec-boitier-de-charge-magsafe-blanc/0900e1dc-f9c4-4646-b62e-43bc66335110#l=11,18 - 28 ans,100 € +,Anniversaire,Tech,,Reconditionné,Mixte
-,Tech,Airpods Pro,https://www.backmarket.fr/fr-fr/p/airpods-pro-avec-boitier-de-charge-magsafe-blanc/0900e1dc-f9c4-4646-b62e-43bc66335110#l=11,18 - 28 ans,100 € +,Noël,Tech,,Reconditionné,Mixte
-,Tech,Montre connectée,https://www.backmarket.fr/fr-fr/p/apple-watch-serie-6-septembre-2020-44-mm-aluminium-argent-bracelet-sport-blanc/60bbfdf0-6914-47b5-90b4-adfed5274be8#l=13,18- 28 ans,100 € +,Anniversaire,Tech,,Reconditionné,Mixte
-,Tech,Montre connectée,https://www.backmarket.fr/fr-fr/p/apple-watch-serie-6-septembre-2020-44-mm-aluminium-argent-bracelet-sport-blanc/60bbfdf0-6914-47b5-90b4-adfed5274be8#l=13,18- 28 ans,100 € +,Noël,Tech,,Reconditionné,Mixte
-,Jeux vidéos,Manette playstation,https://www.backmarket.fr/fr-fr/p/manette-sans-fil-playstation-4-dualshock-v2-noir/fe6a6173-9ffc-482d-afc7-74a795502154#l=10,18- 28 ans,100 € +,Anniversaire,Tech,,Reconditionné,Mixte
-,Tech,Vidéo projecteur,https://www.backmarket.fr/fr-fr/p/video-projecteur-shop-story-mini-projector/48b4d9ad-e855-443d-b8d3-3c4efe7c728e#l=10,18- 28 ans,50 - 75 €,Noël,Tech,,Reconditionné,Mixte
-,Tech,Appareil photo instantané,https://www.fnac.com/Appareil-Photo-Instantane-Fujifilm-Instax-Mini-11-Vert-pastel/a17392564/w-4,12 - 18 ans,75 - 100 €,Anniversaire,Photographie,,N/A,Mixte
-,Tech,Appareil photo instantané,https://www.fnac.com/Appareil-Photo-Instantane-Fujifilm-Instax-Mini-11-Vert-pastel/a17392564/w-4,12 - 18 ans,75 - 100 €,Noël,Photographie,,N/A,Mixte
-,Tech,Enceintes bluetooth,https://www.fnac.com/Enceinte-sans-fil-Bluetooth-Marshal-Stanmore-III-Noir/a17089113/w-4,28 - 40 ans,100 € +,Noël,Musique,,N/A,Mixte
-,Tech,Enceintes bluetooth,https://www.fnac.com/Enceinte-sans-fil-Bluetooth-Marshal-Stanmore-III-Noir/a17089113/w-4,28 - 40 ans,100 € +,Anniversaire,Musique,,N/A,Mixte
-,Tech,Kindle,https://www.amazon.fr/dp/B09SWRYPB2/ref=s9_acsd_al_bw_c2_x_0_i?pf_rd_m=A1X6FK5RDHNB96&pf_rd_s=merchandised-search-3&pf_rd_r=F8JP8R9QYM3DT527ZXJ7&pf_rd_t=101&pf_rd_p=feeb65e2-c8a7-4c2e-bdb5-fc759b112561&pf_rd_i=11138587031,12 - 18 ans,100 € +,Noël,Lecture,,N/A,Mixte
-,Tech,Kindle,https://www.amazon.fr/dp/B09SWRYPB2/ref=s9_acsd_al_bw_c2_x_0_i?pf_rd_m=A1X6FK5RDHNB96&pf_rd_s=merchandised-search-3&pf_rd_r=F8JP8R9QYM3DT527ZXJ7&pf_rd_t=101&pf_rd_p=feeb65e2-c8a7-4c2e-bdb5-fc759b112561&pf_rd_i=11138587031,12 - 18 ans,100 € +,Anniversaire,Lecture,,N/A,Mixte
-,Tech,Caisson de basse,https://www.amazon.fr/Echo-Sub-Caisson-De-Basses-Puissant-Pour-Votre-Echo/dp/B07FHLTV68/ref=sr_1_12?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=appareils+amazon&pf_rd_r=G0NM6XT1JBGZ3E8JXQDF&refinements=p_89%3AAmazon&rnid=428393031&s=computers&sr=1,28 - 40 ans,100 € +,Anniversaire,Musique,,N/A,Mixte
-,Tech,Caisson de basse,https://www.amazon.fr/Echo-Sub-Caisson-De-Basses-Puissant-Pour-Votre-Echo/dp/B07FHLTV68/ref=sr_1_12?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=appareils+amazon&pf_rd_r=G0NM6XT1JBGZ3E8JXQDF&refinements=p_89%3AAmazon&rnid=428393031&s=computers&sr=1,28 - 40 ans,100 € +,Anniversaire,Musique,,N/A,Mixte
-,Beauté / bien-être,Lisseur à cheveux,https://www.sephora.fr/p/styler%C2%AE-ghd-gold%C2%AE---lisseur-P3394016.html,12 - 18 ans,100 € +,Anniversaire,Mode,,N/A,Fille
-,Beauté / bien-être,Lisseur à cheveux,https://www.sephora.fr/p/styler%C2%AE-ghd-gold%C2%AE---lisseur-P3394016.html,12 - 18 ans,100 € +,Noël,Mode,,N/A,Fille
-,Beauté / bien-être,Coffret parfum,https://www.galerieslafayette.com/p/my+way+-+coffret+eau+de+parfum-giorgio+armani/92725617/378,18 - 28 ans,100 € +,Anniversaire,Mode,,N/A,Fille
-,Beauté / bien-être,Coffret parfum,https://www.galerieslafayette.com/p/my+way+-+coffret+eau+de+parfum-giorgio+armani/92725617/378,18 - 28 ans,100 € +,Noël,Mode,,N/A,Fille
-,Beauté / bien-être,Lotion exfoliante,https://www.galerieslafayette.com/p/skin+perfecting+lotion+exfoliante+2+bha-paula+s+choice/68299487/378,18 - 28 ans,35 - 50 €,Anniversaire,N/A,,Prend soin d'elle,Fille
-,Beauté / bien-être,Lotion exfoliante,https://www.galerieslafayette.com/p/skin+perfecting+lotion+exfoliante+2+bha-paula+s+choice/68299487/378,18 - 28 ans,35 - 50 €,Anniversaire,N/A,,Prend soin d'elle,Fille
-,Utilitaire,Mousseur capuccino,https://www.amazon.fr/Vinabo-%C3%89lectrique-%C3%A9lectrique-Cappuccino-inoxydable/dp/B0BG8JMBH1/ref=sr_1_5?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=mousseur+cappuccino&sr=8-5,28 - 40 ans,5 - 20 €,Secret Santa,Cuisine,,N/A,Mixte
-,Utilitaire,Mousseur capuccino,https://www.amazon.fr/Vinabo-%C3%89lectrique-%C3%A9lectrique-Cappuccino-inoxydable/dp/B0BG8JMBH1/ref=sr_1_5?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=mousseur+cappuccino&sr=8-5,18 - 28 ans,5 - 20 €,Secret Santa,Cuisine,,N/A,Mixte
-,Activité,Micro Karaoke,https://www.amazon.fr/Microphone-Bluetooth-Anniversaire-Compatible-Smartphone/dp/B0B3TNQR4N/ref=sr_1_7?keywords=micro+karaoke&sr=8-7,18 - 28 ans,20 - 35 €,Secret Santa,Musique,,N/A,Fille
-,Carte cadeau,Carte cadeau,AMAZON,28 - 40 ans,35 - 50 €,Secret Santa,N/A,Collègue,Exigeant,Mixte
-,Déco,Bougie,https://www.amazon.fr/s?k=bougie&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_1,18 - 28 ans,20 - 35 €,Secret Santa,N/A,,N/A,Fille
-,Déco,Bougie,https://www.amazon.fr/s?k=bougie&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_1,28 - 40 ans,20 - 35 €,Remerciement,N/A,,N/A,Fille
-,Déco,Bougie,https://www.amazon.fr/s?k=bougie&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_1,28 - 40 ans,20 - 35 €,Secret Santa,N/A,,N/A,Fille
-,Déco,Bougie,https://www.amazon.fr/s?k=bougie&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_1,18 - 28 ans,20 - 35 €,Remerciement,N/A,,N/A,Fille
-,Déco,Lampe coucher de soleil,https://www.amazon.fr/projection-arc-en-ciel-visuelle-romantique-Rotation/dp/B091TTLYGX/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=lampe&sr=8-7,18 - 28 ans,20 - 35 €,Anniversaire,N/A,,N/A,Fille
-,Déco,Lampe coucher de soleil,https://www.amazon.fr/projection-arc-en-ciel-visuelle-romantique-Rotation/dp/B091TTLYGX/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=lampe&sr=8-7,18 - 28 ans,20 - 35 €,Noël,N/A,,N/A,Fille
-,Cuisine,Coffret assiettes,https://www.galerieslafayette.com/p/coffret+de+4+assiettes+assorties+anjali-amadeus/86666481/401,18 - 28 ans,35 - 50 €,,Cuisine,,,Fille
-,Cuisine,,,28 - 40 ans,35 - 50 €,,Cuisine,,,
-,Cuisine,,,40 - 50 ans,35 - 50 €,,Cuisine,,,
-,Cuisine,Porte bouteilles,https://www.galerieslafayette.com/p/rack+drak+12+bouteilles-traditional+wine+rack+co/24220904/378,,35 - 50 €,,Cuisine,,,Garçon
-,Cuisine,Laguioles,https://www.galerieslafayette.com/p/menagere+laguiole+production+24+couverts+metal-laguiole/300411620452/378,,35 - 50 €,,Cuisine,,,Garçon
-,Cuisine,Plateau,https://www.galerieslafayette.com/p/plateau+rond+en+metal+dore+louisa-la+redoute+interieurs/300407074548/306,,35 - 50 €,,Cuisine,,,Fille
-,Cuisine,maquillage DIOR,https://www.galerieslafayette.com/p/coffret+diorshow+-+look+couture+essentiels+yeux+et+levres-dior/91022130/378,18 - 28 ans,35 - 50 €,,Bien-être,,,Fille
-,Cuisine,chouchous,https://www.galerieslafayette.com/p/chouchous+pure+soie+slip+mini+-+ete+italien-slip+silk/92649265/378,18 - 28 ans,35 - 50 €,,Bien-être,,,
-,Cuisine,tapis bébé,https://www.galerieslafayette.com/p/matelas+de+jeu+gaze+de+coton+clementine-la+redoute+interieurs/300413240660/356,0 - 6 ans,35 - 50 €,,,,,
-,voyage,trousse de toilette,https://www.galerieslafayette.com/p/vanity+xl+paradise-wouf/87191493/306,28 - 40 ans,35 - 50 €,,Voyage,,,
-,Bien-être,blush chanel,https://www.galerieslafayette.com/p/creme+belle+mine+ensoleillee+-+format+voyage-chanel/93096759/406010,28 - 40 ans,35 - 50 €,,,,,
-,Bien-être,zao,https://www.galerieslafayette.com/p/palette+ombres+a+paupieres+clin+d+oeil-zao+make+up/300418277706/216000,28 - 40 ans,35 - 50 €,,,,,
-déco,Déco,coussin orange,https://www.galerieslafayette.com/p/coussin+decoratif+scarlett+tomette-jalla/79754844/401,28 - 40 ans,35 - 50 €,,,,,
-déco,Déco,Diffuseur d'ambiance,https://www.galerieslafayette.com/p/diffuseur+d+ambiance+a+tiges+moso+bamboo+100+ml-voluspa/71213989/320,28 - 40 ans,35 - 50 €,,,,,
-déco,Déco,Cadres,https://www.galerieslafayette.com/p/lot+de+2+cadres+en+metal+laiton+ou+noir+uyova-la+redoute+interieurs/300407515646/306,28 - 40 ans,35 - 50 €,,,,,
-déco,Déco,coussin,https://www.galerieslafayette.com/p/housse+de+coussin+en+pur+lin+paniou-am+pm/300419305206/278,28 - 40 ans,35 - 50 €,,,,,
-déco,Déco,Bougie,https://www.galerieslafayette.com/p/bougie+moso+bamboo+-+340+gr-voluspa/66701822/378,28 - 40 ans,35 - 50 €,,,,,
-déco,Déco,Déco murale,https://www.galerieslafayette.com/p/decoration+murale+ronde+o30+cm+majari-la+redoute+interieurs/300408529924/306,28 - 40 ans,35 - 50 €,,,,,
-déco,Déco,Fleurs séchées,https://www.galerieslafayette.com/p/bouquet+de+fleurs+sechees+kenia-la+redoute+interieurs/300419690287/306,28 - 40 ans,35 - 50 €,,,,,
-déco,Déco,coussin,https://www.galerieslafayette.com/p/housse+de+coussin+en+coton+stripy-am+pm/300408518246/710,28 - 40 ans,35 - 50 €,,,,,
-déco,Déco,miroir,https://www.galerieslafayette.com/p/miroir+en+rotin+o45+cm+nogu-la+redoute+interieurs/300418045452/0,28 - 40 ans,35 - 50 €,,,,,
-,Bien-être,coffret occitane,https://www.galerieslafayette.com/p/coffret+intense-l+occitane+en+provence/92657137/378,28 - 40 ans,35 - 50 €,,,,,
-,Bien-être,Rituals,https://www.galerieslafayette.com/p/the+ritual+of+sakura+-+coffret+ressourcant+l+2022-rituals/87203912/378,28 - 40 ans,35 - 50 €,,,,,
-,Bien-être,Lisseur cheveux,https://www.amazon.fr/dp/B008SO7JZ4/ref=cm_gf_aAF_d_bf30_bt50_p0_e0_qd0_cXM0cNnvyycXLE2UGXLl,28 - 40 ans,35 - 50 €,,,,,
-,Bien-être,baume cheveux,https://www.galerieslafayette.com/p/baume+bois+de+rose-leonor+greyl/27400071/378,28 - 40 ans,35 - 50 €,,,,,
-,Mode,blaser femme,https://www.zalando.fr/vila-new-34-su-noos-blazer-birch-v1021k02t-b12.html,28 - 40 ans,35 - 50 €,,,,,
-,Mode,pantalon femme,https://www.zalando.fr/grain-de-malice-cigarette-chino-blanc-g1u21a03a-a11.html,28 - 40 ans,35 - 50 €,,,,,
-,Mode,foulard,https://www.galerieslafayette.com/p/carre+elodie+soie-galeries+lafayette/86634204/384,28 - 40 ans,35 - 50 €,,,,,
-,Mode,robe,https://www.zalando.fr/canda-premium-robe-de-jour-white-c6h21c01u-j11.html,28 - 40 ans,35 - 50 €,,,,,
-,Mode,robe rouge,https://www.zalando.fr/oysho-robe-de-jour-red-oy121c0az-g11.html,28 - 40 ans,35 - 50 €,,,,,
-,Mode,nike veste,https://www.zalando.fr/nike-performance-pacer-t-shirt-a-manches-longues-blacksilver-n1241d1tr-q11.html,28 - 40 ans,35 - 50 €,,,,,
-,Mode,maillot bain sport,https://www.zalando.fr/puma-swim-women-racerback-swimsuit-maillot-de-bain-pu181g004-q11.html,28 - 40 ans,35 - 50 €,,,,,
-,Mode,haut sport,https://www.zalando.fr/adidas-performance-yoga-studio-brassieres-de-sport-a-maintien-leger-preloved-red-melcarbon-ad541i0rg-g11.html,28 - 40 ans,35 - 50 €,,,,,
-,Mode,top sans manche,https://www.galerieslafayette.com/p/top+sans+manches+rola-jodhpur/88388737/204,28 - 40 ans,35 - 50 €,,,,,
-,Mode,maillot bain,https://www.zalando.fr/roxy-into-the-sun-wrap-haut-de-bikini-mood-indigo-ro581j0b3-k11.html,28 - 40 ans,35 - 50 €,,,,,
-,Mode,blazer,https://www.zalando.fr/cherry-paris-cadeau-de-naissance-red-cex21g003-g11.html,28 - 40 ans,35 - 50 €,,,,,
-,Mode,veste légère,https://www.zalando.fr/next-palm-print-robe-de-jour-cream-nx321g0k9-b11.html,28 - 40 ans,35 - 50 €,,,,,
-,Sport,écouteurs sans fil,https://www.amazon.fr/Ecouteurs-Bluetooth-doreille-Affichage-Profondes/dp/B09YC24Q43/ref=sr_1_26?refinements=p_36%3A680944011%2Cp_n_feature_thirteen_browse-bin%3A27315993031&rnid=27315992031&s=electronics&sr=1-26,28 - 40 ans,20 - 35 €,,,,,
-,Sport,écouteurs sans fil,https://www.amazon.fr/JVC-%C3%89couteurs-Auriculaires-Bluetooth-R%C3%A9sistance/dp/B09B12KJGH/ref=sr_1_125?refinements=p_36%3A3500-5000%2Cp_n_feature_thirteen_browse-bin%3A27315993031%2Cp_n_condition-type%3A15135266031&rnid=389179011&s=electronics&sr=1-12,28 - 40 ans,35 - 50 €,,,,,
-,Sport,serviette sport,https://www.zalando.fr/coco-and-eve-microfibre-towel-wrap-accessoires-corps-and-bain-c1o31j002-s11.html,28 - 40 ans,20 - 35 €,,,,,
-,voyage,kit dormir ,https://www.zalando.fr/zoe-ayla-system-ivory-zob34j006-s11.html,28 - 40 ans,20 - 35 €,,,,,
-,Sport,coussin yoga,https://www.zalando.fr/el-yoga-mola-equipement-de-fitness-et-yoga-pink-e0j42l002-j11.html,28 - 40 ans,50 - 75 €,,,,,
-,sport,sac de sport,https://www.zalando.fr/oysho-pockets-sac-de-sport-grey-oy151h096-c11.html,28 - 40 ans,35 - 50 €,,,,,
-,Sport,chaussure sport,https://www.zalando.fr/kappa-follow-unisex-chaussures-dentrainement-et-de-fitness-blackgrey-10k44a032-q11.html,28 - 40 ans,35 - 50 €,,,,,
-,voyage,chaussure bensimon,https://www.galerieslafayette.com/p/tennis+classiques+coton-bensimon/42151201/125,28 - 40 ans,35 - 50 €,,,,,
-,voyage,sac de voyage,https://www.amazon.fr/Travel-Duffel-Weekender-voyage-Luggage/dp/B09XGSFCKB/ref=sr_1_24?keywords=Lekesky&sr=8-24&th=1,28 - 40 ans,35 - 50 €,,,,,
-,Cuisine,Porte bouteilles,https://www.amazon.fr/DanDiBo-Casier-Tonneau-bouteilles-Porte-bouteilles/dp/B0019369B6/ref=sr_1_8?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=porte+bouteille&refinements=p_36%3A84667031&rnid=67553031&s=kitchen&sr=1-8,,100 € +,,,,,
-,Cuisine,sets couverts,https://www.galerieslafayette.com/p/-villeroy+boch/300412282828/38,,100 € +,,,,,
-,,Flûtes champagne,https://www.galerieslafayette.com/p/newport+twist-coffret+de+6+flutes+a+champagne+21cl-degrenne/300417820048/444,,100 € +,,,,,
-,,soin après rasage,https://www.galerieslafayette.com/p/eau+sauvage+lotion+apres-rasage-dior/28174324/378,,100 € +,,,,,
+id,Typologie cadeau,Cadeau,Lien,Tranche d'âge,Budget cible,Occasion,activités / centres d'intérêts,Relation,Personnalité / Préférences,Genre
+1,Jeux,Playmobil,"https://www.google.com/shopping/product/358839921583145549?q=jeu+playmobil&sxsrf=APwXEdcZ4SEGZZ7H2cUPEHGx12jgykRHHg:1683555025363&biw=1920&bih=941&dpr=1&prds=eto:10674192526689488294_0,pid:11752353643451595943,rsk:PC_14486972065599239030&sa=X&ved=0ahUKEwj",6 - 12 ans,50 - 75 €,Anniversaire_01,N/A,Famille,N/A,Mixte
+2,Jeux,Playmobil,"https://www.google.com/shopping/product/358839921583145549?q=jeu+playmobil&sxsrf=APwXEdcZ4SEGZZ7H2cUPEHGx12jgykRHHg:1683555025363&biw=1920&bih=941&dpr=1&prds=eto:10674192526689488294_0,pid:11752353643451595943,rsk:PC_14486972065599239030&sa=X&ved=0ahUKEwj",6 - 12 ans,50 - 75 €,Noël_02,N/A,Famille,N/A,Mixte
+3,Livre,Petit Ours Brun,https://www.cultura.com/p-ma-premiere-bibliotheque-petit-ours-brun-9791036349744.html,0 - 6 ans,5 - 20 €,Anniversaire_03,N/A,Famille,N/A,Mixte
+4,Livre,Petit Ours Brun,https://www.cultura.com/p-ma-premiere-bibliotheque-petit-ours-brun-9791036349744.html,0 - 6 ans,5 - 20 €,Noël_04,N/A,Famille,N/A,Mixte
+5,Livre,Elles,https://www.fnac.com/a15584412/Elles-Tome-1-Elles-La-nouvelle-s-Kid-Toussaint?oref=00000000-0000-0000-0000-000000000000&Origin=SEA_GOOGLE_PLA_BOOKS,12 - 18 ans,5 - 20 €,Anniversaire,N/A,Famille,N/A,Fille
+6,Livre,Elles,https://www.fnac.com/a15584412/Elles-Tome-1-Elles-La-nouvelle-s-Kid-Toussaint?oref=00000000-0000-0000-0000-000000000000&Origin=SEA_GOOGLE_PLA_BOOKS,12 - 18 ans,5 - 20 €,Noël,N/A,Famille,N/A,Fille
+7,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Anniversaire,N/A,Famille,Made in France,Mixte
+8,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Noël,N/A,Amis,N/A,Mixte
+9,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Naissance,N/A,Amis,Made in France,Mixte
+10,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-Famille-Disney/dp/B0013F4LZ6/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle+enfant&s=toys&sr=1-7,6 - 12 ans,5 - 20 €,Anniversaire,Disney,Famille,N/A,Mixte
+11,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-Famille-Disney/dp/B0013F4LZ6/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle+enfant&s=toys&sr=1-7,6 - 12 ans,5 - 20 €,Noël,Disney,Famille,N/A,Mixte
+12,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-Armoire-Cuisine/dp/B00B2IIR3G/ref=sr_1_4?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle&s=toys&sr=1-4,12 - 18 ans,5 - 20 €,Noël,Jeux de société,Famille,Aime les activités relaxantes,Mixte
+13,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-Armoire-Cuisine/dp/B00B2IIR3G/ref=sr_1_4?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle&s=toys&sr=1-4,12 - 18 ans,5 - 20 €,Anniversaire,Jeux de société,Famille,Aime les défis,Mixte
+14,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-%C3%89toil%C3%A9e-Pi%C3%A8ces/dp/B0029QB53E/ref=sr_1_15?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle&s=toys&sr=1-15,60 ans + ,20 - 35 €,Noël,Jeux de société,Famille,Aime les activités relaxantes,Mixte
+15,Jeux,Puzzle,https://www.amazon.fr/Ravensburger-Puzzle-Classique-%C3%89toil%C3%A9e-Pi%C3%A8ces/dp/B0029QB53E/ref=sr_1_15?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=puzzle&s=toys&sr=1-15,60 ans + ,20 - 35 €,Anniversaire,Jeux de société,Famille,Aime les défis,Mixte
+16,Activité,SPA pour 2,,28 - 40 ans,100 € +,Mariage,Détente,Mixte,N/A,Mixte
+17,Vêtement,Sweat,https://www.zalando.fr/tommy-hilfiger-essential-unisex-sweatshirt-white-to126k01p-a11.html,12 - 18 ans,50 - 75 €,Noël,Marques,Famille,S'habiller décontracté,Garçon
+18,Vêtement,Sweat,https://www.zalando.fr/jack-and-jones-jorhide-crew-neck-sweatshirt-oatmeal-ja222s165-b11.html,18 - 28 ans,35 - 50 €,Anniversaire,Sport,Amis,S'habiller décontracté,Garçon
+19,Vêtement,Sweat,https://www.zalando.fr/jack-and-jones-jorhide-crew-neck-sweatshirt-oatmeal-ja222s165-b11.html,18 - 28 ans,35 - 50 €,Saint-Valentin,Voyager,Amoureux,S'habiller décontracté,Garçon
+20,Vêtement,Chemise,https://www.zalando.fr/mango-chemise-khaki-m9122d2g1-n11.html,18 - 28 ans,35 - 50 €,Anniversaire,Mode,Amis,Aime bien s'habiller,Garçon
+21,Vêtement,Chemise,https://www.zalando.fr/mango-chemise-khaki-m9122d2g1-n11.html,18 - 28 ans,35 - 50 €,Noël,Mode,Amis,Aime bien s'habiller,Garçon
+22,Vêtement,Chemise,https://www.zalando.fr/mango-chemise-khaki-m9122d2g1-n11.html,18 - 28 ans,35 - 50 €,Saint-Valentin,Mode,Amis,Aime bien s'habiller,Garçon
+23,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,28 - 40 ans,50 - 75 €,Anniversaire,Mode,Amis,Aime bien s'habiller,Garçon
+24,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,28 - 40 ans,50 - 75 €,Noël,Mode,Amis,Aime bien s'habiller,Garçon
+25,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,28 - 40 ans,50 - 75 €,Saint-Valentin,Mode,Amis,Aime bien s'habiller,Garçon
+26,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,40 - 50 ans,50 - 75 €,Noël,Mode,Amis,Aime bien s'habiller,Garçon
+27,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,40 - 50 ans,50 - 75 €,Anniversaire,Mode,Amis,Aime bien s'habiller,Garçon
+28,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,50 - 60 ans,50 - 75 €,Noël,Mode,Amis,Aime bien s'habiller,Garçon
+29,Vêtement,Chemise,https://www.zalando.fr/ck-calvin-klein-bari-slim-fit-chemise-ck122d00j-k14.html,50 - 60 ans,50 - 75 €,Anniversaire,Mode,Amis,Aime bien s'habiller,Garçon
+30,Livre,Manga,https://www.amazon.fr/One-piece-originale-ODA-Eiichir%C3%B4/dp/2723488527/ref=sr_1_2?keywords=one+piece+manga&s=books&sr=1-2,12 - 18 ans,5 - 20 €,Noël,Lecture,Famille,N/A,Mixte
+31,Livre,Manga,https://www.amazon.fr/One-piece-originale-ODA-Eiichir%C3%B4/dp/2723488527/ref=sr_1_2?keywords=one+piece+manga&s=books&sr=1-2,12 - 18 ans,5 - 20 €,Anniversaire,BD,,N/A,Mixte
+32,Activité,Place de concert,https://www.fnacspectacles.com/artist/aya-nakamura/aya-nakamura-3285145/?affiliate=FS8,18 - 28 ans,50 - 75 €,Anniversaire,Musique,Amis,N/A,Mixte
+33,Activité,Place de concert,https://www.fnacspectacles.com/artist/chinese-man/?affiliate=FS8,28 - 40 ans,35 - 50 €,Saint-Valentin,Musique,Amis,N/A,Mixte
+34,Activité,Place d'opéra / musique classique,https://www.fnacspectacles.com/artist/lac-des-cygnes-ballet-orchestre-2023/le-lac-des-cygnes-ballet-orchestre-3193993/,50 - 60 ans,50 - 75 €,Noël,Musique classique,Famille,N/A,Mixte
+35,Activité,Place d'opéra / musique classique,https://www.fnacspectacles.com/artist/lac-des-cygnes-ballet-orchestre-2023/le-lac-des-cygnes-ballet-orchestre-3193993/,50 - 60 ans,50 - 75 €,Anniversaire,Musique classique,Famille,N/A,Mixte
+36,Equipement sportif,Gym ball,https://www.amazon.fr/Sveltus-Gymball-75-cm/dp/B073GR744S/ref=sr_1_9?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=gym+ball&sr=8-9,18 - 28 ans,5 - 20 €,Anniversaire,Sport,Famille,Bien-être,Fille
+37,Equipement sportif,Gym ball,https://www.amazon.fr/Sveltus-Gymball-75-cm/dp/B073GR744S/ref=sr_1_9?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=gym+ball&sr=8-9,18 - 28 ans,5 - 20 €,,Yoga,Amis,Se détendre,
+38,Jeux,Boules de pétanque,https://www.amazon.fr/Garden-Games-p%C3%A9tanque-Sacoche-Transport/dp/B00BAP2DMC/ref=sr_1_6?keywords=boules+de+p%C3%A9tanque&sr=8-6,28 - 40 ans,50 - 75 €,Anniversaire,Activités en plein air,Amis,Sociable,Garçon
+39,Jeux,Boules de pétanque,https://www.amazon.fr/Garden-Games-p%C3%A9tanque-Sacoche-Transport/dp/B00BAP2DMC/ref=sr_1_6?keywords=boules+de+p%C3%A9tanque&sr=8-6,28 - 40 ans,50 - 75 €,Noël,Activités en plein air,Amis,Sociable,Garçon
+40,Equipement sportif,Set de golf,https://www.amazon.fr/Callaway-2019-pour-Complet-12-pi%C3%A8ces-Package/dp/B07H2HQJR5/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=set+de+golf&sr=8-6,28 - 40 ans,100 € +,Noël,Activités en plein air,Famille,N/A,Garçon
+41,Equipement sportif,Set de golf,https://www.amazon.fr/Callaway-2019-pour-Complet-12-pi%C3%A8ces-Package/dp/B07H2HQJR5/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=set+de+golf&sr=8-6,28 - 40 ans,100 € +,Noël,Activités en plein air,Famille,N/A,Garçon
+42,Tech,Ecouteurs bluetooth,https://www.amazon.fr/%C3%89couteurs-Bluetooth-lntelligent-Automatique-Oreillette/dp/B0BS16VF7K/ref=sr_1_3?keywords=%C3%A9couteur+bluetooth&refinements=p_36%3A680943011&rnid=389179011&s=electronics&sr=1-3,18 - 28 ans,5 - 20 €,Anniversaire,Musique,Famille,N/A,Mixte
+43,Tech,Ecouteurs bluetooth,https://www.amazon.fr/Ecouteurs-Bluetooth-%C3%89couteurs-R%C3%A9duction-Contr%C3%B4le/dp/B0BP7HKMNH/ref=sr_1_6?keywords=%C3%A9couteur+bluetooth&refinements=p_36%3A680944011&rnid=389179011&s=electronics&sr=1-6,28 - 40 ans,20 - 35 €,Noël,Sport,Amoureux/se,N/A,Mixte
+44,Utilitaire,Trottinette électrique,https://www.amazon.fr/Xiaomi-trottinette-%C3%A9lectrique-autonomie-antid%C3%A9rapants/dp/B0B5PLRCLK/ref=sr_1_6?keywords=trottinette+%C3%A9lectrique&sr=8-6,18 - 28 ans,100 € +,Noël,N/A,Famille,Aime se balader,Mixte
+45,Equipement sportif,Ballon de basket,https://www.amazon.fr/Wilson-Mini-Basketball-caoutchouc-Orange/dp/B01MUPZEZE/ref=sr_1_5?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=ballon+de+basket&sr=8-5,12 - 18 ans,5 - 20 €,Anniversaire,Sport,Famille,N/A,Garçon
+46,Equipement sportif,Kit badmington,https://www.amazon.fr/Jeu-Badminton-Joueurs-Ext%C3%A9rieur-Plein/dp/B011PONRPY/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=kit+badminton&sr=8-6,12 - 18 ans,5 - 20 €,Anniversaire,Sport,Famille,N/A,Garçon
+47,Equipement sportif,Kit badmington,https://www.amazon.fr/Jeu-Badminton-Joueurs-Ext%C3%A9rieur-Plein/dp/B011PONRPY/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=kit+badminton&sr=8-6,18 - 28 ans,20 - 35 €,Noël,Activités en plein air,,N/A,Garçon
+48,Carte cadeau,Carte cadeau,FNAC,18 - 28 ans,20 - 35 €,Anniversaire,Culture ,Famille,Exigeant,Mixte
+49,Carte cadeau,Carte cadeau,AMAZON,28 - 40 ans,35 - 50 €,Travail,N/A,Collègue,Exigeant,Mixte
+50,Beauté / bien-être,Coffret cosmétique,https://www.amazon.fr/Marilou-Bio-Hydratation-D%C3%A9fatigant-D%C3%A9maquillant/dp/B09SV934D4/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=coffret+cosm%C3%A9tique&refinements=p_36%3A211725031&rnid=211723031&s=beauty&sr=1-7,18 - 28 ans,20 - 35 €,Anniversaire,Mode,Famille,Prend soin d'elle,Fille
+51,Beauté / bien-être,Coffret cosmétique,https://www.amazon.fr/%C3%89NERGISANT-Nurture-Nature-essentielles-aromath%C3%A9rapie/dp/B09HXRGC14/ref=sr_1_39?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=coffret+cosm%C3%A9tique&refinements=p_36%3A211726031&rnid=211723031&s=beauty&sr=1-39,28 - 40 ans,35 - 50 €,Noël,Maquillage,Amis,Prend soin d'elle,Fille
+52,Utilitaire,Robot cuisine,https://www.amazon.fr/W%C3%ABasy-Multifonction-Culinaire-Professionnel-pr%C3%A9programm%C3%A9es/dp/B07TKLMPJN/ref=sr_1_4?keywords=robot+cuisine&refinements=p_36%3A84665031&rnid=67553031&s=kitchen&sr=1-4,18 - 28 ans,50 - 75 €,Noël,Cuisine,Famille,Aime faire plaisir aux autres,Fille
+53,Utilitaire,Robot cuisine,https://www.amazon.fr/Robot-Multifonction-Desire-24730-56-Russell/dp/B079TPV7SH/ref=sr_1_5?keywords=robot+cuisine&refinements=p_36%3A7500-10000&rnid=67553031&s=kitchen&sr=1-5,28 - 40 ans,75 - 100 €,Noël,Cuisine,,,Fille
+54,Utilitaire,Robot cuisine,https://www.amazon.fr/Bosch-Electrom%C3%A9nager-MC812M844-MultiTalent-MC812M44/dp/B07HPRQJL1/ref=sr_1_4?keywords=robot+cuisine&refinements=p_36%3A10000-30000&rnid=67553031&s=kitchen&sr=1-4,40 - 50 ans,100 € +,Noël,Cuisine,,,Fille
+55,Livre,Livre de cuisine,https://www.amazon.fr/NOPI-Ottolenghi-Yotam-Ottolenghi/dp/2011356830/ref=sr_1_1?keywords=ottolenghi&sr=8-1,28 - 40 ans,35 - 50 €,Anniversaire,Cuisine,Amis,Aime recevoir chez elle,Fille
+56,Livre,Livre de cuisine,https://www.amazon.fr/Manuel-cuisinier-amateur-recettes-techniques/dp/2812321342/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=livre+cuisine&refinements=p_36%3A2000-3500&rnid=389153011&sr=8-6,18 - 28 ans,20 - 35 €,Anniversaire,Cuisine,Famille,N/A,
+57,Art,Kit peinture / dessin,https://www.amazon.fr/Artina-Mallette-Leonardo-Ensemble-acrylique/dp/B016WPLWA8/ref=sr_1_13?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=kit+peinture&refinements=p_36%3A2000-3500&rnid=67553031&sr=8-13,12 - 18 ans,20 - 35 €,Noël,Art,Famille,Créatif,Mixte
+58,Vêtement,Pull Saint-James,https://fr.saint-james.com/collections/homme/products/pull-marin-uni-matelot-coupe-ajustee-pure-laine-vierge-tango,28 - 40 ans,100 € +,Noël,Mode,Famille,Made in France,Garçon
+59,Livre,Petit Ours Brun,https://www.cultura.com/p-ma-premiere-bibliotheque-petit-ours-brun-9791036349744.html,0 - 6 ans,5 - 20 €,Anniversaire,N/A,Famille,N/A,Mixte
+60,Livre,Petit Ours Brun,https://www.cultura.com/p-ma-premiere-bibliotheque-petit-ours-brun-9791036349744.html,0 - 6 ans,5 - 20 €,Noël,N/A,Famille,N/A,Mixte
+61,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Anniversaire,N/A,Famille,Made in France,Mixte
+62,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Noël,N/A,Famille,N/A,Mixte
+63,Peluche,Peluche bébé,https://www.petiteamelie.fr/peluche-licorne-doudou-decoration.html?srsltid=AR57-fBZVHpGuYr4g6T6ct1dRDfjankdSp1aJ7zDk_ueLtI9lhyZ2A9193Q# ,0 - 6 ans,5 - 20 €,Naissance,N/A,Amis,Made in France,Mixte
+64,Utilitaire,Bavoir tablier,https://www.petitsixieme.com/repas/4063-konges-slojd-bavoirs-bebe-cherry-petit-sixieme.html,0 - 6 ans,20 - 35 €,Naissance,N/A,Mixte,Made in France,
+65,Livre,Livre d'apprentissage Joe ,https://www.amazon.fr/dp/293041782X/ref=cm_gf_aBN_d_bt30_p0_e0_qd0_GuU2lLvN99JeJob6stjn,0 - 6 ans,20 - 35 €,Naissance,N/A,,N/A,Mixte
+66,Utilitaire,Couverture bébé,https://www.amazon.fr/dp/B086QNQXRJ/ref=cm_gf_aBN_d_bt30_p0_e0_qd1_e3yjtOGhedP3Fi6wc9cr,0 - 6 ans,20 - 35 €,Naissance,N/A,,N/A,Mixte
+67,Peluche,Peluche oreiller,https://www.amazon.fr/dp/B092NJ7JSN/ref=cm_gf_aBN_d_bf30_bt50_p0_e0_qd0_xeXokXXOM7n8rTW4bYJw,0 - 6 ans,35 - 50 €,Naissance,N/A,,N/A,Mixte
+68,Utilitaire,Baignoire pour bébé pliable,https://www.amazon.fr/dp/B0BRSDMMWM/ref=cm_gf_aBN_d_bf30_bt50_p0_e0_qd0_ytymAMaA5XORsyC0AQaa,0 - 6 ans,35 - 50 €,Naissance,N/A,,N/A,Mixte
+69,Utilitaire,Mobile Musical,https://www.amazon.fr/dp/B0B5XHKTHW/ref=cm_gf_aBN_d_bf30_bt50_p0_e0_qd2_gQrPjzD3yiqXD4v2mQnW,0 - 6 ans,35 - 50 €,Naissance,N/A,,N/A,Mixte
+70,Utilitaire,Tapis de jeu,https://www.amazon.fr/dp/B0BK5J9XT7/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd0_DrFgDftxnRH1F8Lxv26Q,0 - 6 ans,50 - 75 €,Naissance,N/A,,N/A,Mixte
+71,Utilitaire,Rangement pour jouet,https://www.amazon.fr/dp/B09NS4BJW2/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd0_gxs9ajbCrqV0jVEgtlGP,0 - 6 ans,50 - 75 €,Naissance,N/A,,N/A,Mixte
+72,Peluche,Peluche géante,https://www.amazon.fr/dp/B09XBK4SZY/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd0_Id7E252dNGUbLsIan9fU,0 - 6 ans,50 - 75 €,Naissance,N/A,,N/A,Mixte
+73,Utilitaire,Berceau,https://www.amazon.fr/dp/B09JCMVW61/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd1_5HTqNIzAT2muC3XZbMns,28-40 ans,75 - 100 €,Naissance,N/A,,N/A,Mixte
+74,Utilitaire,Cuiseur multi-fonction,https://www.amazon.fr/dp/B09Z1TLFZ8/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd1_mSS9U52jNOfJw7xQxp79,28-40 ans,75 - 100 €,Naissance,N/A,,N/A,Mixte
+75,Utilitaire,Chaise haute,https://www.amazon.fr/dp/B08MBC4WQ9/ref=cm_gf_aBN_d_bf50_bt100_p0_e0_qd1_VEKRXPrOGHK0Y3VEzIn9 ,28-40 ans,75 - 100 €,Naissance,N/A,,N/A,Mixte
+76,Utilitaire,Landeau,https://www.amazon.fr/dp/B00Q4PEXKS/ref=cm_gf_aBN_d_bf100_bt200_p0_e0_qd0_Al7LgVgJVCTNayQRCFKK,28-40 ans,100 € +,Naissance,N/A,,N/A,Mixte
+77,Utilitaire,Robot multifonction bébé,https://www.amazon.fr/dp/B00CWXWB6O/ref=cm_gf_aBN_d_bf100_bt200_p0_e0_qd0_lV8ytoCOGOUjlZcjvXcy,28-40 ans,100 € +,Naissance,N/A,,N/A,Mixte
+78,Utilitaire,Table à manger avec baignoire,https://www.amazon.fr/dp/B00133UK2Q/ref=cm_gf_aBN_d_bf100_bt200_p0_e0_qd0_CqIMGiShsFbswbKNFOfB,28-40 ans,100 € +,Naissance,N/A,,N/A,Mixte
+79,Déco,Carte lieu de rencontre,https://positiveprints.com/fr/produit/carte-lieu-de-rencontre/,28 - 40 ans,35 - 50 €,Mariage,N/A,,N/A,Fille
+80,Tech,Airpods Pro,https://www.backmarket.fr/fr-fr/p/airpods-pro-avec-boitier-de-charge-magsafe-blanc/0900e1dc-f9c4-4646-b62e-43bc66335110#l=11,18 - 28 ans,100 € +,Anniversaire,Tech,,Reconditionné,Mixte
+81,Tech,Airpods Pro,https://www.backmarket.fr/fr-fr/p/airpods-pro-avec-boitier-de-charge-magsafe-blanc/0900e1dc-f9c4-4646-b62e-43bc66335110#l=11,18 - 28 ans,100 € +,Noël,Tech,,Reconditionné,Mixte
+82,Tech,Montre connectée,https://www.backmarket.fr/fr-fr/p/apple-watch-serie-6-septembre-2020-44-mm-aluminium-argent-bracelet-sport-blanc/60bbfdf0-6914-47b5-90b4-adfed5274be8#l=13,18- 28 ans,100 € +,Anniversaire,Tech,,Reconditionné,Mixte
+83,Tech,Montre connectée,https://www.backmarket.fr/fr-fr/p/apple-watch-serie-6-septembre-2020-44-mm-aluminium-argent-bracelet-sport-blanc/60bbfdf0-6914-47b5-90b4-adfed5274be8#l=13,18- 28 ans,100 € +,Noël,Tech,,Reconditionné,Mixte
+84,Jeux vidéos,Manette playstation,https://www.backmarket.fr/fr-fr/p/manette-sans-fil-playstation-4-dualshock-v2-noir/fe6a6173-9ffc-482d-afc7-74a795502154#l=10,18- 28 ans,100 € +,Anniversaire,Tech,,Reconditionné,Mixte
+85,Tech,Vidéo projecteur,https://www.backmarket.fr/fr-fr/p/video-projecteur-shop-story-mini-projector/48b4d9ad-e855-443d-b8d3-3c4efe7c728e#l=10,18- 28 ans,50 - 75 €,Noël,Tech,,Reconditionné,Mixte
+86,Tech,Appareil photo instantané,https://www.fnac.com/Appareil-Photo-Instantane-Fujifilm-Instax-Mini-11-Vert-pastel/a17392564/w-4,12 - 18 ans,75 - 100 €,Anniversaire,Photographie,,N/A,Mixte
+87,Tech,Appareil photo instantané,https://www.fnac.com/Appareil-Photo-Instantane-Fujifilm-Instax-Mini-11-Vert-pastel/a17392564/w-4,12 - 18 ans,75 - 100 €,Noël,Photographie,,N/A,Mixte
+88,Tech,Enceintes bluetooth,https://www.fnac.com/Enceinte-sans-fil-Bluetooth-Marshal-Stanmore-III-Noir/a17089113/w-4,28 - 40 ans,100 € +,Noël,Musique,,N/A,Mixte
+89,Tech,Enceintes bluetooth,https://www.fnac.com/Enceinte-sans-fil-Bluetooth-Marshal-Stanmore-III-Noir/a17089113/w-4,28 - 40 ans,100 € +,Anniversaire,Musique,,N/A,Mixte
+90,Tech,Kindle,https://www.amazon.fr/dp/B09SWRYPB2/ref=s9_acsd_al_bw_c2_x_0_i?pf_rd_m=A1X6FK5RDHNB96&pf_rd_s=merchandised-search-3&pf_rd_r=F8JP8R9QYM3DT527ZXJ7&pf_rd_t=101&pf_rd_p=feeb65e2-c8a7-4c2e-bdb5-fc759b112561&pf_rd_i=11138587031,12 - 18 ans,100 € +,Noël,Lecture,,N/A,Mixte
+91,Tech,Kindle,https://www.amazon.fr/dp/B09SWRYPB2/ref=s9_acsd_al_bw_c2_x_0_i?pf_rd_m=A1X6FK5RDHNB96&pf_rd_s=merchandised-search-3&pf_rd_r=F8JP8R9QYM3DT527ZXJ7&pf_rd_t=101&pf_rd_p=feeb65e2-c8a7-4c2e-bdb5-fc759b112561&pf_rd_i=11138587031,12 - 18 ans,100 € +,Anniversaire,Lecture,,N/A,Mixte
+92,Tech,Caisson de basse,https://www.amazon.fr/Echo-Sub-Caisson-De-Basses-Puissant-Pour-Votre-Echo/dp/B07FHLTV68/ref=sr_1_12?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=appareils+amazon&pf_rd_r=G0NM6XT1JBGZ3E8JXQDF&refinements=p_89%3AAmazon&rnid=428393031&s=computers&sr=1,28 - 40 ans,100 € +,Anniversaire,Musique,,N/A,Mixte
+93,Tech,Caisson de basse,https://www.amazon.fr/Echo-Sub-Caisson-De-Basses-Puissant-Pour-Votre-Echo/dp/B07FHLTV68/ref=sr_1_12?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=appareils+amazon&pf_rd_r=G0NM6XT1JBGZ3E8JXQDF&refinements=p_89%3AAmazon&rnid=428393031&s=computers&sr=1,28 - 40 ans,100 € +,Anniversaire,Musique,,N/A,Mixte
+94,Beauté / bien-être,Lisseur à cheveux,https://www.sephora.fr/p/styler%C2%AE-ghd-gold%C2%AE---lisseur-P3394016.html,12 - 18 ans,100 € +,Anniversaire,Mode,,N/A,Fille
+95,Beauté / bien-être,Lisseur à cheveux,https://www.sephora.fr/p/styler%C2%AE-ghd-gold%C2%AE---lisseur-P3394016.html,12 - 18 ans,100 € +,Noël,Mode,,N/A,Fille
+96,Beauté / bien-être,Coffret parfum,https://www.galerieslafayette.com/p/my+way+-+coffret+eau+de+parfum-giorgio+armani/92725617/378,18 - 28 ans,100 € +,Anniversaire,Mode,,N/A,Fille
+97,Beauté / bien-être,Coffret parfum,https://www.galerieslafayette.com/p/my+way+-+coffret+eau+de+parfum-giorgio+armani/92725617/378,18 - 28 ans,100 € +,Noël,Mode,,N/A,Fille
+98,Beauté / bien-être,Lotion exfoliante,https://www.galerieslafayette.com/p/skin+perfecting+lotion+exfoliante+2+bha-paula+s+choice/68299487/378,18 - 28 ans,35 - 50 €,Anniversaire,N/A,,Prend soin d'elle,Fille
+99,Beauté / bien-être,Lotion exfoliante,https://www.galerieslafayette.com/p/skin+perfecting+lotion+exfoliante+2+bha-paula+s+choice/68299487/378,18 - 28 ans,35 - 50 €,Anniversaire,N/A,,Prend soin d'elle,Fille
+100,Utilitaire,Mousseur capuccino,https://www.amazon.fr/Vinabo-%C3%89lectrique-%C3%A9lectrique-Cappuccino-inoxydable/dp/B0BG8JMBH1/ref=sr_1_5?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=mousseur+cappuccino&sr=8-5,28 - 40 ans,5 - 20 €,Secret Santa,Cuisine,,N/A,Mixte
+101,Utilitaire,Mousseur capuccino,https://www.amazon.fr/Vinabo-%C3%89lectrique-%C3%A9lectrique-Cappuccino-inoxydable/dp/B0BG8JMBH1/ref=sr_1_5?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=mousseur+cappuccino&sr=8-5,18 - 28 ans,5 - 20 €,Secret Santa,Cuisine,,N/A,Mixte
+102,Activité,Micro Karaoke,https://www.amazon.fr/Microphone-Bluetooth-Anniversaire-Compatible-Smartphone/dp/B0B3TNQR4N/ref=sr_1_7?keywords=micro+karaoke&sr=8-7,18 - 28 ans,20 - 35 €,Secret Santa,Musique,,N/A,Fille
+103,Carte cadeau,Carte cadeau,AMAZON,28 - 40 ans,35 - 50 €,Secret Santa,N/A,Collègue,Exigeant,Mixte
+104,Déco,Bougie,https://www.amazon.fr/s?k=bougie&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_1,18 - 28 ans,20 - 35 €,Secret Santa,N/A,,N/A,Fille
+105,Déco,Bougie,https://www.amazon.fr/s?k=bougie&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_1,28 - 40 ans,20 - 35 €,Remerciement,N/A,,N/A,Fille
+106,Déco,Bougie,https://www.amazon.fr/s?k=bougie&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_1,28 - 40 ans,20 - 35 €,Secret Santa,N/A,,N/A,Fille
+107,Déco,Bougie,https://www.amazon.fr/s?k=bougie&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_1,18 - 28 ans,20 - 35 €,Remerciement,N/A,,N/A,Fille
+108,Déco,Lampe coucher de soleil,https://www.amazon.fr/projection-arc-en-ciel-visuelle-romantique-Rotation/dp/B091TTLYGX/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=lampe&sr=8-7,18 - 28 ans,20 - 35 €,Anniversaire,N/A,,N/A,Fille
+109,Déco,Lampe coucher de soleil,https://www.amazon.fr/projection-arc-en-ciel-visuelle-romantique-Rotation/dp/B091TTLYGX/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=lampe&sr=8-7,18 - 28 ans,20 - 35 €,Noël,N/A,,N/A,Fille
+110,Cuisine,Coffret assiettes,https://www.galerieslafayette.com/p/coffret+de+4+assiettes+assorties+anjali-amadeus/86666481/401,18 - 28 ans,35 - 50 €,,Cuisine,,,Fille
+111,Cuisine,,,28 - 40 ans,35 - 50 €,,Cuisine,,,
+112,Cuisine,,,40 - 50 ans,35 - 50 €,,Cuisine,,,
+113,Cuisine,Porte bouteilles,https://www.galerieslafayette.com/p/rack+drak+12+bouteilles-traditional+wine+rack+co/24220904/378,,35 - 50 €,,Cuisine,,,Garçon
+114,Cuisine,Laguioles,https://www.galerieslafayette.com/p/menagere+laguiole+production+24+couverts+metal-laguiole/300411620452/378,,35 - 50 €,,Cuisine,,,Garçon
+115,Cuisine,Plateau,https://www.galerieslafayette.com/p/plateau+rond+en+metal+dore+louisa-la+redoute+interieurs/300407074548/306,,35 - 50 €,,Cuisine,,,Fille
+116,Cuisine,maquillage DIOR,https://www.galerieslafayette.com/p/coffret+diorshow+-+look+couture+essentiels+yeux+et+levres-dior/91022130/378,18 - 28 ans,35 - 50 €,,Bien-être,,,Fille
+117,Cuisine,chouchous,https://www.galerieslafayette.com/p/chouchous+pure+soie+slip+mini+-+ete+italien-slip+silk/92649265/378,18 - 28 ans,35 - 50 €,,Bien-être,,,
+118,Cuisine,tapis bébé,https://www.galerieslafayette.com/p/matelas+de+jeu+gaze+de+coton+clementine-la+redoute+interieurs/300413240660/356,0 - 6 ans,35 - 50 €,,,,,
+119,voyage,trousse de toilette,https://www.galerieslafayette.com/p/vanity+xl+paradise-wouf/87191493/306,28 - 40 ans,35 - 50 €,,Voyage,,,
+120,Bien-être,blush chanel,https://www.galerieslafayette.com/p/creme+belle+mine+ensoleillee+-+format+voyage-chanel/93096759/406010,28 - 40 ans,35 - 50 €,,,,,
+121,Bien-être,zao,https://www.galerieslafayette.com/p/palette+ombres+a+paupieres+clin+d+oeil-zao+make+up/300418277706/216000,28 - 40 ans,35 - 50 €,,,,,
+122,Déco,coussin orange,https://www.galerieslafayette.com/p/coussin+decoratif+scarlett+tomette-jalla/79754844/401,28 - 40 ans,35 - 50 €,,,,,
+123,Déco,Diffuseur d'ambiance,https://www.galerieslafayette.com/p/diffuseur+d+ambiance+a+tiges+moso+bamboo+100+ml-voluspa/71213989/320,28 - 40 ans,35 - 50 €,,,,,
+124,Déco,Cadres,https://www.galerieslafayette.com/p/lot+de+2+cadres+en+metal+laiton+ou+noir+uyova-la+redoute+interieurs/300407515646/306,28 - 40 ans,35 - 50 €,,,,,
+125,Déco,coussin,https://www.galerieslafayette.com/p/housse+de+coussin+en+pur+lin+paniou-am+pm/300419305206/278,28 - 40 ans,35 - 50 €,,,,,
+126,Déco,Bougie,https://www.galerieslafayette.com/p/bougie+moso+bamboo+-+340+gr-voluspa/66701822/378,28 - 40 ans,35 - 50 €,,,,,
+127,Déco,Déco murale,https://www.galerieslafayette.com/p/decoration+murale+ronde+o30+cm+majari-la+redoute+interieurs/300408529924/306,28 - 40 ans,35 - 50 €,,,,,
+128,Déco,Fleurs séchées,https://www.galerieslafayette.com/p/bouquet+de+fleurs+sechees+kenia-la+redoute+interieurs/300419690287/306,28 - 40 ans,35 - 50 €,,,,,
+129,Déco,coussin,https://www.galerieslafayette.com/p/housse+de+coussin+en+coton+stripy-am+pm/300408518246/710,28 - 40 ans,35 - 50 €,,,,,
+130,Déco,miroir,https://www.galerieslafayette.com/p/miroir+en+rotin+o45+cm+nogu-la+redoute+interieurs/300418045452/0,28 - 40 ans,35 - 50 €,,,,,
+131,Bien-être,coffret occitane,https://www.galerieslafayette.com/p/coffret+intense-l+occitane+en+provence/92657137/378,28 - 40 ans,35 - 50 €,,,,,
+132,Bien-être,Rituals,https://www.galerieslafayette.com/p/the+ritual+of+sakura+-+coffret+ressourcant+l+2022-rituals/87203912/378,28 - 40 ans,35 - 50 €,,,,,
+133,Bien-être,Lisseur cheveux,https://www.amazon.fr/dp/B008SO7JZ4/ref=cm_gf_aAF_d_bf30_bt50_p0_e0_qd0_cXM0cNnvyycXLE2UGXLl,28 - 40 ans,35 - 50 €,,,,,
+134,Bien-être,baume cheveux,https://www.galerieslafayette.com/p/baume+bois+de+rose-leonor+greyl/27400071/378,28 - 40 ans,35 - 50 €,,,,,
+135,Mode,blaser femme,https://www.zalando.fr/vila-new-34-su-noos-blazer-birch-v1021k02t-b12.html,28 - 40 ans,35 - 50 €,,,,,
+136,Mode,pantalon femme,https://www.zalando.fr/grain-de-malice-cigarette-chino-blanc-g1u21a03a-a11.html,28 - 40 ans,35 - 50 €,,,,,
+137,Mode,foulard,https://www.galerieslafayette.com/p/carre+elodie+soie-galeries+lafayette/86634204/384,28 - 40 ans,35 - 50 €,,,,,
+138,Mode,robe,https://www.zalando.fr/canda-premium-robe-de-jour-white-c6h21c01u-j11.html,28 - 40 ans,35 - 50 €,,,,,
+139,Mode,robe rouge,https://www.zalando.fr/oysho-robe-de-jour-red-oy121c0az-g11.html,28 - 40 ans,35 - 50 €,,,,,
+140,Mode,nike veste,https://www.zalando.fr/nike-performance-pacer-t-shirt-a-manches-longues-blacksilver-n1241d1tr-q11.html,28 - 40 ans,35 - 50 €,,,,,
+141,Mode,maillot bain sport,https://www.zalando.fr/puma-swim-women-racerback-swimsuit-maillot-de-bain-pu181g004-q11.html,28 - 40 ans,35 - 50 €,,,,,
+142,Mode,haut sport,https://www.zalando.fr/adidas-performance-yoga-studio-brassieres-de-sport-a-maintien-leger-preloved-red-melcarbon-ad541i0rg-g11.html,28 - 40 ans,35 - 50 €,,,,,
+143,Mode,top sans manche,https://www.galerieslafayette.com/p/top+sans+manches+rola-jodhpur/88388737/204,28 - 40 ans,35 - 50 €,,,,,
+144,Mode,maillot bain,https://www.zalando.fr/roxy-into-the-sun-wrap-haut-de-bikini-mood-indigo-ro581j0b3-k11.html,28 - 40 ans,35 - 50 €,,,,,
+145,Mode,blazer,https://www.zalando.fr/cherry-paris-cadeau-de-naissance-red-cex21g003-g11.html,28 - 40 ans,35 - 50 €,,,,,
+146,Mode,veste légère,https://www.zalando.fr/next-palm-print-robe-de-jour-cream-nx321g0k9-b11.html,28 - 40 ans,35 - 50 €,,,,,
+147,Sport,écouteurs sans fil,https://www.amazon.fr/Ecouteurs-Bluetooth-doreille-Affichage-Profondes/dp/B09YC24Q43/ref=sr_1_26?refinements=p_36%3A680944011%2Cp_n_feature_thirteen_browse-bin%3A27315993031&rnid=27315992031&s=electronics&sr=1-26,28 - 40 ans,20 - 35 €,,,,,
+148,Sport,écouteurs sans fil,https://www.amazon.fr/JVC-%C3%89couteurs-Auriculaires-Bluetooth-R%C3%A9sistance/dp/B09B12KJGH/ref=sr_1_125?refinements=p_36%3A3500-5000%2Cp_n_feature_thirteen_browse-bin%3A27315993031%2Cp_n_condition-type%3A15135266031&rnid=389179011&s=electronics&sr=1-12,28 - 40 ans,35 - 50 €,,,,,
+149,Sport,serviette sport,https://www.zalando.fr/coco-and-eve-microfibre-towel-wrap-accessoires-corps-and-bain-c1o31j002-s11.html,28 - 40 ans,20 - 35 €,,,,,
+150,voyage,kit dormir ,https://www.zalando.fr/zoe-ayla-system-ivory-zob34j006-s11.html,28 - 40 ans,20 - 35 €,,,,,
+151,Sport,coussin yoga,https://www.zalando.fr/el-yoga-mola-equipement-de-fitness-et-yoga-pink-e0j42l002-j11.html,28 - 40 ans,50 - 75 €,,,,,
+152,sport,sac de sport,https://www.zalando.fr/oysho-pockets-sac-de-sport-grey-oy151h096-c11.html,28 - 40 ans,35 - 50 €,,,,,
+153,Sport,chaussure sport,https://www.zalando.fr/kappa-follow-unisex-chaussures-dentrainement-et-de-fitness-blackgrey-10k44a032-q11.html,28 - 40 ans,35 - 50 €,,,,,
+154,voyage,chaussure bensimon,https://www.galerieslafayette.com/p/tennis+classiques+coton-bensimon/42151201/125,28 - 40 ans,35 - 50 €,,,,,
+155,voyage,sac de voyage,https://www.amazon.fr/Travel-Duffel-Weekender-voyage-Luggage/dp/B09XGSFCKB/ref=sr_1_24?keywords=Lekesky&sr=8-24&th=1,28 - 40 ans,35 - 50 €,,,,,
+156,Cuisine,Porte bouteilles,https://www.amazon.fr/DanDiBo-Casier-Tonneau-bouteilles-Porte-bouteilles/dp/B0019369B6/ref=sr_1_8?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=porte+bouteille&refinements=p_36%3A84667031&rnid=67553031&s=kitchen&sr=1-8,,100 € +,,,,,
+157,Cuisine,sets couverts,https://www.galerieslafayette.com/p/-villeroy+boch/300412282828/38,,100 € +,,,,,
+158,,Flûtes champagne,https://www.galerieslafayette.com/p/newport+twist-coffret+de+6+flutes+a+champagne+21cl-degrenne/300417820048/444,,100 € +,,,,,
+159,,soin après rasage,https://www.galerieslafayette.com/p/eau+sauvage+lotion+apres-rasage-dior/28174324/378,,100 € +,,,,,

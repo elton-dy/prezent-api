@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .models import User, Conversation, Message, Produit, Favori , Visitor
-from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, ProduitSerializer, FavoriSerializer , VisitorSerializer
+from .models import User, Conversation, Message, Product, Favori , Visitor
+from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, FavoriSerializer , VisitorSerializer , ProductSerializer
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
 from rest_framework import permissions
@@ -10,7 +10,7 @@ from user_agents import parse
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
-
+import re
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -94,6 +94,15 @@ class MessageViewSet(viewsets.ModelViewSet):
 
         if response.status_code == 201:  # Si le message de l'utilisateur a été créé avec succès
             ai_response = conversational_chat(user_message, conversation)  # Obtenez la réponse de l'IA
+            product_ids = self.extract_product_ids(ai_response)
+            product_details = []
+            for product_id in product_ids:
+                try:
+                    product = Product.objects.get(pk=product_id)
+                    product_serializer = ProductSerializer(product)
+                    product_details.append(product_serializer.data)
+                except Product.DoesNotExist:
+                    product_details.append({'error': f'Product with ID {product_id} not found'})
 
             # Créez le message de l'IA dans la base de données
             Message.objects.create(
@@ -101,9 +110,21 @@ class MessageViewSet(viewsets.ModelViewSet):
                 text=ai_response,
                 type="AI"
             )
-            return Response({'ai_response': ai_response, 'type': 'AI' }, status=201)
+            cleaned_ai_response = self.clean_ai_response(ai_response)
+            return Response({'ai_response': cleaned_ai_response, 'type': 'AI','product_details': product_details }, status=201)
 
         return response  # Retournez la réponse HTTP originale
+
+    def extract_product_ids(self,ai_response):
+            # Regex pour trouver un motif correspondant à l'ID de produit
+            # Par exemple, elle cherche des chaînes qui ressemblent à "'id' => '89'"
+            matches = re.findall(r"\'id\'\s*=>\s*'(\d+)'", ai_response)
+            return matches if matches else []
+
+    def clean_ai_response(self,ai_response):
+        # Utilisez une expression régulière pour retirer les parties avec 'id' => 'valeur'
+        cleaned_response = re.sub(r"\['id' => '\d+'\]", '', ai_response)
+        return cleaned_response.strip()
 
 class VisitorViewSet(viewsets.ModelViewSet):
     queryset = Visitor.objects.all()
@@ -129,9 +150,9 @@ class VisitorViewSet(viewsets.ModelViewSet):
             ip = request.META.get('REMOTE_ADDR')
         return ip
 
-class ProduitViewSet(viewsets.ModelViewSet):
-    queryset = Produit.objects.all()
-    serializer_class = ProduitSerializer
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
 
 class FavoriViewSet(viewsets.ModelViewSet):
     queryset = Favori.objects.all()
