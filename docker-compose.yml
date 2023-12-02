@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
     container_name: api
     # Utiliser Gunicorn ou un autre serveur WSGI pour la production au lieu de runserver
-    command: gunicorn your_project_name.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn pzt_api.wsgi:application --bind 0.0.0.0:8000
     environment:
       - POSTGRES_NAME=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
