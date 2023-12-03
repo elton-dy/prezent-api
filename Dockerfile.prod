@@ -1,0 +1,19 @@
+FROM python:3.10.12
+
+# Désactivation de la création de fichiers .pyc dans le conteneur
+ENV PYTHONDONTWRITEBYTECODE 1
+# Désactivation du tamponnage des sorties stdout et stderr de Python
+ENV PYTHONUNBUFFERED 1
+
+# Création et définition du répertoire de travail dans le conteneur
+WORKDIR /api
+
+# Copie du fichier de dépendances et installation des dépendances
+COPY requirements.txt /api/
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copie du code source de l'application dans le conteneur
+COPY . /api
+
+# Exécution de la collecte des fichiers statiques
+RUN python manage.py collectstatic --noinput

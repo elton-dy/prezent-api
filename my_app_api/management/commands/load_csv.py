@@ -42,3 +42,5 @@ class Command(BaseCommand):
                 product.personalities_preferences.add(personality_preference)
 
                 product.save()
+        self.stdout.write(self.style.SUCCESS('The command completed successfully.'))
+
