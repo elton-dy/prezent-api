@@ -7,35 +7,39 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - '5432:5432'
     volumes:
       - postgres:/var/lib/postgresql/data/
-    # Les ports ne doivent pas être exposés en production pour des raisons de sécurité
-    # ports:
-    #   - '5432:5432'
-
   api:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: api
-    # Utiliser Gunicorn ou un autre serveur WSGI pour la production au lieu de runserver
-    command: gunicorn pzt_api.wsgi:application --bind 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
     environment:
       - POSTGRES_NAME=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    ports:
-      - '8000:8000'
-    # Les volumes de développement peuvent être retirés en production
-    # volumes:
-    #   - .:/api
+    volumes:
+      - .:/api
     depends_on:
       - postgres-db
-
-  # PgAdmin n'est généralement pas nécessaire en production, à moins que vous n'ayez besoin de gestion de base de données
-  # pg-admin:
-  #   ...
-
+  pg-admin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres-db
+    volumes:
+      - my-data:/var/lib/pgadmin
 volumes:
   postgres:
-  # my-data: (si vous utilisez PgAdmin)
+  my-data:

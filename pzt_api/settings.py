@@ -36,7 +36,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://1-prezent.com",
     "http://172.22.0.2:5173",
     "http://172.21.0.2:5173",
-
+    "http://172.20.0.2:5173",
 ]
 
 # Application definition
