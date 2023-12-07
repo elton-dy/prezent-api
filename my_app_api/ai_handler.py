@@ -48,7 +48,7 @@ def get_vectorstore():
     return Chroma(persist_directory="data/db/news", embedding_function=OpenAIEmbeddings())
 
 def load_llm():
-    llm = ChatOpenAI(model_name="gpt-4", temperature=0.4)
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo-1106", temperature=0.4)
     return llm
 
 def retrieval_qa_chain(llm,db,history):
