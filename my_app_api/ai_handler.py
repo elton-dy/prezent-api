@@ -17,10 +17,7 @@ class DatabaseMemory:
         self.conversation = conversation
 
     def get_history(self):
-        messages = Message.objects.filter(conversation=self.conversation).order_by('timestamp')
-        history = [(f"{msg.type}: {msg.text}") for msg in messages]
-        formatted_history = '\n'.join(history)
-        return formatted_history
+        return Message.objects.filter(conversation=self.conversation).order_by('timestamp')
 
 def set_custom_prompt():
     custom_prompt_template = """
@@ -80,28 +77,14 @@ def qa_bot(conversation, history):
     return qa
 
 def final_result(query, conversation, db_memory):
-    formatted_history = db_memory.get_history()  # Get the conversation history
-    # Split the formatted history into individual messages
-    history_lines = formatted_history.split('\n')
-    print('history: ',history_lines)
+    messages = db_memory.get_history()  # Get the conversation history
     history = ChatMessageHistory()
-    # Convert the history lines into tuples or dictionaries
-    for line in history_lines:
-        speaker, message = line.split(": ", 1)  # Sépare le speaker et le message
-        if speaker == 'AI':
-            history.add_ai_message(message)
-        elif speaker == 'Human':
-            history.add_user_message(message)
 
-#     for line in history_lines:
-#         if line.startswith("AI: "):
-#             # Extrait le message de l'IA en enlevant les 4 premiers caractères ("AI: ")
-#             message = line[4:]
-#             history.add_ai_message(message)
-#         elif line.startswith("Human: "):
-#             # Extrait le message de l'utilisateur en enlevant les 7 premiers caractères ("Human: ")
-#             message = line[7:]
-#             history.add_user_message(message)
+    for message in messages:
+        if message.type == 'AI':
+            history.add_ai_message(message.text)
+        elif message.type == 'Human':
+            history.add_user_message(message.text)
     qa_result = qa_bot(conversation, history)  # Pass the history to qa_bot
     response = qa_result.run({"query": query})
     return response
