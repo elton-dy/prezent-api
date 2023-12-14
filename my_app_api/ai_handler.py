@@ -25,7 +25,7 @@ def set_custom_prompt():
     Act as an advisor to find the ideal gift. important ask specific voice questions to the user to identify the perfect gift, focusing on understanding the personality of the recipient and give only one gift at a time.
     First, base your suggestions on the conversation history, then on the context.
     Use the following context (enclosed in <ctx></ctx>) and the conversation history (enclosed in <hs></hs>) to respond,
-    When a gift is chosen,give the reason and give me juste the id about the product like this ['id' => 'gift id']. doesn't mention product id
+    Important when a gift is chosen,give the reason and give me juste the id about the product like this ['id' => 'the gift id']. doesn't mention product id
     ------
     <ctx>
     {context}
