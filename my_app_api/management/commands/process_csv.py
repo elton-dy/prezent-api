@@ -19,7 +19,7 @@ class Command(BaseCommand):
         self.process_input_path(input_path, persist_directory)
 
     def process_csv_file(self, file_path, persist_directory):
-        loader = CSVLoader(file_path=file_path, csv_args={"delimiter": ";", "quotechar": '"'})
+        loader = CSVLoader(file_path=file_path, csv_args={"delimiter": ",", "quotechar": '"'})
         documents = loader.load()
 
         # here we are using OpenAI embeddings but in future we will swap out to local embeddings
