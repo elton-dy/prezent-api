@@ -19,18 +19,18 @@ class Command(BaseCommand):
                 age_range, _ = AgeRange.objects.get_or_create(age_range=row["Tranche d'âge"])
                 occasion, _ = Occasion.objects.get_or_create(occasion_name=row['Occasion'])
                 relationship, _ = Relationship.objects.get_or_create(relationship_type=row['Relation'])
-                activity_interest, _ = ActivityInterest.objects.get_or_create(activity=row["activités / centres d'intérêts"])
+                activity_interest, _ = ActivityInterest.objects.get_or_create(activity=row["Activités / Centres d'intérêts"])
                 personality_preference, _ = PersonalityPreference.objects.get_or_create(personality=row["Personnalité / Préférences"])
 
                 # Créer l'objet Product
                 product = Product.objects.create(
                     name=row['Cadeau'],
-#                     description="Description si disponible",
+                    description=row['Description'],
                     typology=row['Typologie cadeau'],
                     link=row['Lien'],
                     target_budget=row['Budget cible'],
 #                     fixed_price="Prix si disponible",
-#                     image_url="URL de l'image si disponible",
+                    image_url=row['image_url'],
                     gender=gender
                 )
 
