@@ -27,7 +27,7 @@ def set_custom_prompt():
     Use the following context (enclosed in <ctx></ctx>) and the conversation history (enclosed in <hs></hs>) to respond,
     Important when a gift is chosen,give the reason and give me juste the id about the product like this ['id' => 'the gift id']. doesn't mention product id.
     if you can't find a gift, juste says so
-    example of answer: she gift that could correspond to you would be a headphone for listening to music  ['id' => '15']
+    example of answer: the gift that could correspond to you would be a earphone for listening to music  ['id' => '16']
     ------
     <ctx>
     {context}
@@ -47,7 +47,7 @@ def get_vectorstore():
     return Chroma(persist_directory="data/db/news", embedding_function=OpenAIEmbeddings())
 
 def load_llm():
-    llm = ChatOpenAI(model_name="gpt-4-0613", temperature=0.6)
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo-1106", temperature=0.5)
     return llm
 
 def retrieval_qa_chain(llm,db,history):
