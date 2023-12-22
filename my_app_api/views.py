@@ -10,6 +10,9 @@ from user_agents import parse
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
+from .permissions import IsAuthenticatedOrVisitorWithUUID
+from .permissions import CreateOrReadOnly
+
 import re
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -21,6 +24,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class ConversationViewSet(viewsets.ModelViewSet):
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
+#     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
 
     def create(self, request, *args, **kwargs):
         # Déterminez si la conversation est initiée par un utilisateur ou un visiteur
@@ -82,6 +86,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
+#     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
 
     def create(self, request, *args, **kwargs):
         user_message = request.data.get('text', '')  # Obtenez le texte du message de l'utilisateur
@@ -135,6 +140,7 @@ class MessageViewSet(viewsets.ModelViewSet):
 class VisitorViewSet(viewsets.ModelViewSet):
     queryset = Visitor.objects.all()
     serializer_class = VisitorSerializer
+    permission_classes = [CreateOrReadOnly]
 
     def create(self, request, *args, **kwargs):
         ip_address = self.get_client_ip(request)
@@ -159,10 +165,14 @@ class VisitorViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+#     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
+
 
 class FavoriViewSet(viewsets.ModelViewSet):
     queryset = Favori.objects.all()
     serializer_class = FavoriSerializer
+#     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
+
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
