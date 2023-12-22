@@ -27,6 +27,7 @@ def set_custom_prompt():
     Use the following context (enclosed in <ctx></ctx>) and the conversation history (enclosed in <hs></hs>) to respond,
     Important when a gift is chosen,give the reason and give me juste the id about the product like this ['id' => 'the gift id']. doesn't mention product id.
     if you can't find a gift, juste says so
+    example of answer: she gift that could correspond to you would be a headphone for listening to music  ['id' => '15']
     ------
     <ctx>
     {context}
