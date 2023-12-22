@@ -27,8 +27,8 @@ services:
     ports:
       - '8000:8000'
     # Les volumes de développement peuvent être retirés en production
-    # volumes:
-    #   - .:/api
+    volumes:
+      - ./data/db:/api/data/db
     depends_on:
       - postgres-db
 
