@@ -18,13 +18,13 @@ import re
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-#     permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class ConversationViewSet(viewsets.ModelViewSet):
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
-#     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
+    permission_classes = [IsAuthenticatedOrVisitorWithUUID]
 
     def create(self, request, *args, **kwargs):
         # Déterminez si la conversation est initiée par un utilisateur ou un visiteur
@@ -86,7 +86,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
-#     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
+    permission_classes = [IsAuthenticatedOrVisitorWithUUID]
 
     def create(self, request, *args, **kwargs):
         user_message = request.data.get('text', '')  # Obtenez le texte du message de l'utilisateur
@@ -165,13 +165,13 @@ class VisitorViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-#     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
+    permission_classes = [IsAuthenticatedOrVisitorWithUUID]
 
 
 class FavoriViewSet(viewsets.ModelViewSet):
     queryset = Favori.objects.all()
     serializer_class = FavoriSerializer
-#     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
+    permission_classes = [IsAuthenticatedOrVisitorWithUUID]
 
 
     def perform_create(self, serializer):
