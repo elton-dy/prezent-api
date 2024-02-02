@@ -22,7 +22,7 @@ class CreateOrReadOnly(BasePermission):
 
     def has_permission(self, request, view):
         # Autoriser POST et GET sans authentification
-        if request.method in []:
+        if request.method in ['POST']:
             return True
 
         # Pour les autres requêtes, exiger l'authentification
