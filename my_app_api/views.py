@@ -54,7 +54,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
             conversation = self.serializer_class().Meta.model.objects.get(pk=response.data['id'])
             initial_message = Message.objects.create(
                 conversation=conversation,
-                text="Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+                text="Bonjour ! À qui souhaites-tu offrir un cadeau ?",
                 type="AI"
             )
 
