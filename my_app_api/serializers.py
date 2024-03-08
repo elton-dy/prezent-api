@@ -1,19 +1,20 @@
 from rest_framework import serializers
 from .models import User, Conversation, Message, Product, Favori, Visitor , Gender
 from .models import AgeRange, Occasion, Relationship, ActivityInterest, PersonalityPreference
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from django.contrib.auth import get_user_model
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'email', 'password')
+        fields = ('id', 'first_name', 'last_name', 'email', 'password')
 
     def create(self, validated_data):
         # Utilisez la méthode set_password pour hacher le mot de passe
         user = User(
             email=validated_data['email'],
-            username=validated_data['username'],
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name']
         )
@@ -135,3 +136,18 @@ class FavoriSerializer(serializers.ModelSerializer):
     class Meta:
         model = Favori
         fields = '__all__'
+
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        User = get_user_model()
+
+        try:
+            user = User.objects.get_by_natural_key(attrs['username'])
+        except User.DoesNotExist:
+            raise serializers.ValidationError("Invalid credentials.")
+
+        if not user.check_password(attrs['password']):
+            raise serializers.ValidationError("Invalid credentials.")
+
+        attrs['user'] = user
+        return attrs
