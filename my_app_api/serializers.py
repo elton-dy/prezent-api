@@ -7,13 +7,12 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'email', 'password')
+        fields = ('id', 'first_name', 'last_name', 'email', 'password')
 
     def create(self, validated_data):
         # Utilisez la méthode set_password pour hacher le mot de passe
         user = User(
             email=validated_data['email'],
-            username=validated_data['username'],
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name']
         )
