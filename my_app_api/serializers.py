@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import User, Conversation, Message, Product, Favori, Visitor , Gender
 from .models import AgeRange, Occasion, Relationship, ActivityInterest, PersonalityPreference
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from django.contrib.auth import get_user_model
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -134,3 +136,18 @@ class FavoriSerializer(serializers.ModelSerializer):
     class Meta:
         model = Favori
         fields = '__all__'
+
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        User = get_user_model()
+
+        try:
+            user = User.objects.get_by_natural_key(attrs['username'])
+        except User.DoesNotExist:
+            raise serializers.ValidationError("Invalid credentials.")
+
+        if not user.check_password(attrs['password']):
+            raise serializers.ValidationError("Invalid credentials.")
+
+        attrs['user'] = user
+        return attrs
