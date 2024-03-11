@@ -142,12 +142,28 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         User = get_user_model()
 
         try:
-            user = User.objects.get_by_natural_key(attrs['username'])
+            user = User.objects.get(email=attrs['email'])
         except User.DoesNotExist:
             raise serializers.ValidationError("Invalid credentials.")
 
         if not user.check_password(attrs['password']):
             raise serializers.ValidationError("Invalid credentials.")
 
-        attrs['user'] = user
-        return attrs
+        # Appelez la méthode get_token pour générer le jeton avec les informations utilisateur
+        token = self.get_token(user)
+
+        # Retournez le jeton et les informations utilisateur dans la réponse
+        return {
+            'access': str(token),
+            'user': UserSerializer(user).data,
+        }
+
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+
+        # Ajoutez les informations utilisateur au jeton
+        token['email'] = user.email
+        token['id'] = user.id
+
+        return token
