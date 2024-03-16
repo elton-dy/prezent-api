@@ -40,6 +40,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://172.20.0.2:5173",
 ]
 
+AUTH_USER_MODEL = 'my_app_api.User'
 # Application definition
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -53,8 +54,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'rest_framework',
     'rest_framework_simplejwt',
+    'rest_framework',
     'my_app_api',
     'django_user_agents'
 ]
@@ -79,11 +80,11 @@ REST_FRAMEWORK = {
 #         'rest_framework.permissions.IsAuthenticated',
 #     ),
     'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.UserRateThrottle'
-        # 'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+        'rest_framework.throttling.AnonRateThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
-        # 'anon': '100/day',
+        'anon': '100/day',
         'user': '1000/day'
     }
 }
