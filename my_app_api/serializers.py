@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Conversation, Message, Product, Favori, Visitor , Gender
+from .models import User, Conversation, Message, Product, Favori, Visitor , Gender,Article
 from .models import AgeRange, Occasion, Relationship, ActivityInterest, PersonalityPreference
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import get_user_model
@@ -26,6 +26,11 @@ class ConversationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conversation
         fields = '__all__'  # Sérialise tous les champs du modèle Conversation
+
+class ArticleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Article
+        fields = '__all__'
 
 class VisitorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -138,26 +143,6 @@ class FavoriSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-    def validate(self, attrs):
-        User = get_user_model()
-
-        try:
-            user = User.objects.get(email=attrs['email'])
-        except User.DoesNotExist:
-            raise serializers.ValidationError("Invalid credentials.")
-
-        if not user.check_password(attrs['password']):
-            raise serializers.ValidationError("Invalid credentials.")
-
-        # Appelez la méthode get_token pour générer le jeton avec les informations utilisateur
-        token = self.get_token(user)
-
-        # Retournez le jeton et les informations utilisateur dans la réponse
-        return {
-            'access': str(token),
-            'user': UserSerializer(user).data,
-        }
-
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)

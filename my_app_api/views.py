@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .models import User, Conversation, Message, Product, Favori , Visitor
-from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, FavoriSerializer , VisitorSerializer , ProductSerializer
+from .models import User, Conversation, Message, Product, Favori , Visitor,Article
+from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, FavoriSerializer , VisitorSerializer , ProductSerializer,ArticleSerializer
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
 from rest_framework import permissions
@@ -12,7 +12,11 @@ from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
 from .permissions import IsAuthenticatedOrVisitorWithUUID
 from .permissions import CreateOrReadOnly
-
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth import authenticate
+from .serializers import CustomTokenObtainPairSerializer
+from rest_framework.views import APIView
+from rest_framework.decorators import action
 import re
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -28,7 +32,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
-
+    
     def create(self, request, *args, **kwargs):
         # Déterminez si la conversation est initiée par un utilisateur ou un visiteur
         if not request.user.is_authenticated:
@@ -179,3 +183,30 @@ class FavoriViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+class LoginView(APIView):
+    def post(self, request):
+        email = request.data.get('email')
+        password = request.data.get('password')
+
+        user = authenticate(email=email, password=password)
+
+        if user is not None:
+            refresh = RefreshToken.for_user(user)
+            serializer = CustomTokenObtainPairSerializer.get_token(user)
+            serializer['refresh'] = str(refresh)
+            serializer['access'] = str(refresh.access_token)
+
+            return Response(serializer, status=status.HTTP_200_OK)
+        else:
+            return Response({'detail': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
+        
+class ArticleViewSet(viewsets.ModelViewSet):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    http_method_names = ['get']
+
+    def retrieve(self, request, pk=None):
+        article = self.get_object()
+        serializer = self.get_serializer(article)
+        return Response(serializer.data)
