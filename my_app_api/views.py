@@ -17,6 +17,7 @@ from django.contrib.auth import authenticate
 from .serializers import CustomTokenObtainPairSerializer
 from rest_framework.views import APIView
 from rest_framework.decorators import action
+import sys
 import re
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -29,10 +30,11 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
 class ConversationViewSet(viewsets.ModelViewSet):
+
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
-    
+
     def create(self, request, *args, **kwargs):
         # Déterminez si la conversation est initiée par un utilisateur ou un visiteur
         if not request.user.is_authenticated:
@@ -41,7 +43,8 @@ class ConversationViewSet(viewsets.ModelViewSet):
                 visitor_uuid = request.data.get('visitor_uuid')
                 if visitor_uuid:
                     visitor = get_object_or_404(Visitor, uuid=visitor_uuid)
-                    request.data['visitor'] = visitor.id
+                    request_data = request.data.copy()
+                    request_data['visitor'] = visitor
                 else:
                     # Handle the case where visitor_uuid is not provided
                     return Response({'error': 'Visitor UUID must be provided.'}, status=status.HTTP_400_BAD_REQUEST)
@@ -50,32 +53,44 @@ class ConversationViewSet(viewsets.ModelViewSet):
             except Visitor.DoesNotExist:
                 return Response({'error': 'No visitor found with the provided UUID.'}, status=status.HTTP_404_NOT_FOUND)
 
+            # Créez une nouvelle instance de Conversation
+            request_data.pop('visitor', None)
+            request_data.pop('visitor_uuid', None)
+            conversation = Conversation.objects.create(visitor=visitor, **request_data)
 
-            # Attribuez l'ID du visiteur à la conversation
-            request.data['visitor'] = visitor.id
-        else:
-            request.data['user'] = request.user.id
-
-        response = super().create(request, *args, **kwargs)
-        if response.status_code == 201:
-            conversation = self.serializer_class().Meta.model.objects.get(pk=response.data['id'])
+            # Créez un message initial pour la conversation
             initial_message = Message.objects.create(
                 conversation=conversation,
                 text="Bonjour ! À qui souhaites-tu offrir un cadeau ?",
                 type="AI"
             )
 
-            message_serializer = MessageSerializer(initial_message)
-
-            response_data = response.data
-            response_data['messages'] = [message_serializer.data]
+            # Créez une réponse avec le message initial
+            response_data = self.serializer_class(conversation).data
+            response_data['messages'] = [MessageSerializer(initial_message).data]
             return Response(response_data, status=status.HTTP_201_CREATED)
-        return response
+
+        else:
+            request.data['user'] = request.user.id
+            response = super().create(request, *args, **kwargs)
+            if response.status_code == 201:
+                conversation = self.serializer_class().Meta.model.objects.get(pk=response.data['id'])
+                initial_message = Message.objects.create(
+                    conversation=conversation,
+                    text="Bonjour ! À qui souhaites-tu offrir un cadeau ?",
+                    type="AI"
+                )
+
+                message_serializer = MessageSerializer(initial_message)
+
+                response_data = response.data
+                response_data['messages'] = [message_serializer.data]
+                return Response(response_data, status=status.HTTP_201_CREATED)
+            return response
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
-        # Assuming 'messages' is a reverse relation from Message to Conversation
         messages = Message.objects.filter(conversation=instance)
         message_serializer = MessageSerializer(messages, many=True)
         response_data = serializer.data
@@ -94,8 +109,10 @@ class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
-
+    
     def create(self, request, *args, **kwargs):
+        if 'visitor_uuid' in request.data:
+            del request.data['visitor_uuid']
         user_message = request.data.get('text', '')  # Obtenez le texte du message de l'utilisateur
         conversation_id = request.data.get('conversation', None)  # Obtenez l'ID de la conversation
 

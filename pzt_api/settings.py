@@ -38,6 +38,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://172.22.0.2:5173",
     "http://172.21.0.2:5173",
     "http://172.20.0.2:5173",
+    "http://172.19.0.2:5173"
 ]
 
 AUTH_USER_MODEL = 'my_app_api.User'

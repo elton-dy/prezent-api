@@ -33,7 +33,7 @@ router.register(r'articles', ArticleViewSet)
 urlpatterns = [
     path('api/', include([
         path('api/login/', LoginView.as_view(), name='login'),
-        path('token/', TokenObtainPairView.as_view(serializer_class=CustomTokenObtainPairSerializer), name='token_obtain_pair'),
+        path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
         path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
         path('', include(router.urls)),
     ])),

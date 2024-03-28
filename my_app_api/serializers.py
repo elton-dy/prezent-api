@@ -22,10 +22,6 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
-class ConversationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Conversation
-        fields = '__all__'  # Sérialise tous les champs du modèle Conversation
 
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
@@ -42,6 +38,13 @@ class MessageSerializer(serializers.ModelSerializer):
         model = Message
         fields = '__all__'
 
+class ConversationSerializer(serializers.ModelSerializer):
+    messages = MessageSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Conversation
+        fields = ['id', 'name', 'user', 'visitor', 'timestamp', 'messages']
+        
 class AgeRangeSerializer(serializers.ModelSerializer):
     class Meta:
         model = AgeRange
