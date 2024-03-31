@@ -36,7 +36,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
-
+    
 class Visitor(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     browser = models.CharField(max_length=255, null=True, blank=True)
@@ -158,3 +158,8 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+class PasswordReset(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    token = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)

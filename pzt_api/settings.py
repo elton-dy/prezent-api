@@ -31,6 +31,14 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='localhost,127.0.0.1,[::1]').split(',')
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'ssl0.ovh.net'  #serveur SMTP
+EMAIL_PORT = 465  #port SMTP
+EMAIL_HOST_USER = 'noreply@1-prezent.com'
+EMAIL_HOST_PASSWORD = 'u6wMjKv5XMk9pZfy'
+EMAIL_USE_SSL = True  # Utilisez True pour SSL ou False pour TLS, et utilisez EMAIL_USE_TLS = True dans ce dernier cas
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:9000",

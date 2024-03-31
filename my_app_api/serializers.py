@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Conversation, Message, Product, Favori, Visitor , Gender,Article
+from .models import User, Conversation, Message, Product, Favori, Visitor , Gender,Article, PasswordReset
 from .models import AgeRange, Occasion, Relationship, ActivityInterest, PersonalityPreference
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import get_user_model
@@ -143,6 +143,11 @@ class FavoriSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Favori
+        fields = '__all__'
+
+class PasswordResetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PasswordReset
         fields = '__all__'
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):

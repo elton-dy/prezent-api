@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .models import User, Conversation, Message, Product, Favori , Visitor,Article
-from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, FavoriSerializer , VisitorSerializer , ProductSerializer,ArticleSerializer
+from .models import User, Conversation, Message, Product, Favori , Visitor,Article,UserManager,PasswordReset
+from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, FavoriSerializer , VisitorSerializer , ProductSerializer,ArticleSerializer,PasswordResetSerializer
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
 from rest_framework import permissions
@@ -17,18 +17,75 @@ from django.contrib.auth import authenticate
 from .serializers import CustomTokenObtainPairSerializer
 from rest_framework.views import APIView
 from rest_framework.decorators import action
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.conf import settings
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.utils.crypto import get_random_string
+from django.urls import reverse
+from django.contrib.auth import get_user_model
+import secrets
 import sys
 import re
+
+User = get_user_model()
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
     def get_permissions(self):
         if self.action == 'create':
             return [permissions.AllowAny()]
         return [permissions.IsAuthenticated()]
 
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
 
+        # Envoyer l'e-mail de création de compte
+        self.send_account_creation_email(serializer.data['email'], serializer.data['first_name'])
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+    
+    def send_account_creation_email(self, email, first_name):
+        subject = 'Bienvenue sur notre plateforme'
+        text_content = 'Contenu du texte alternatif.'
+        context = {'first_name': first_name}
+
+        # Générer le contenu HTML à partir du modèle
+        html_content = render_to_string('email_template.html', context)
+
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email]
+
+        # Créer l'objet e-mail et envoyer
+        message = EmailMultiAlternatives(subject, text_content, email_from, recipient_list)
+        message.attach_alternative(html_content, "text/html")
+        message.send()
+        
+class PasswordResetViewSet(viewsets.ModelViewSet):
+    queryset = PasswordReset.objects.all()
+    serializer_class = PasswordResetSerializer
+
+    def create(self, request, *args, **kwargs):
+        email = request.data.get('email')
+
+        if email:
+            user = get_object_or_404(UserManager().get_queryset(), email=email)
+            token = secrets.token_urlsafe(32)
+            reset_instance = PasswordReset.objects.create(user=user, token=token)
+            serializer = self.get_serializer(reset_instance)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'error': 'Veuillez fournir une adresse e-mail valide.'}, status=status.HTTP_400_BAD_REQUEST)
+                            
+                            
 class ConversationViewSet(viewsets.ModelViewSet):
 
     queryset = Conversation.objects.all()
