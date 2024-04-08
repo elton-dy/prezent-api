@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
-from .models import User, Conversation, Message, Product, Favori , Visitor,Article
-from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, FavoriSerializer , VisitorSerializer , ProductSerializer,ArticleSerializer
+from .models import User, Conversation, Message, Product, Favori , Visitor,Article,UserManager,PasswordReset
+from .serializers import UserSerializer, ConversationSerializer, MessageSerializer, FavoriSerializer , VisitorSerializer , ProductSerializer,ArticleSerializer,PasswordResetSerializer
 from .ai_handler import conversational_chat
 from rest_framework.response import Response
 from rest_framework import permissions
@@ -17,22 +17,131 @@ from django.contrib.auth import authenticate
 from .serializers import CustomTokenObtainPairSerializer
 from rest_framework.views import APIView
 from rest_framework.decorators import action
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.conf import settings
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.utils.crypto import get_random_string
+from django.urls import reverse
+from django.contrib.auth import get_user_model
+from my_app_api.serializers import PasswordResetConfirmSerializer
+from django.contrib.auth.forms import PasswordChangeForm
+from django.utils import timezone
+from rest_framework import generics, permissions, status
+from datetime import timedelta
+import secrets
+import sys
 import re
+
+User = get_user_model()
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
     def get_permissions(self):
         if self.action == 'create':
             return [permissions.AllowAny()]
         return [permissions.IsAuthenticated()]
 
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
 
+        # Envoyer l'e-mail de création de compte
+        self.send_account_creation_email(serializer.data['email'], serializer.data['first_name'])
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+    
+    def send_account_creation_email(self, email, first_name):
+        subject = 'Bienvenue sur notre plateforme'
+        text_content = 'Contenu du texte alternatif.'
+        context = {'first_name': first_name}
+
+        # Générer le contenu HTML à partir du modèle
+        html_content = render_to_string('email_template.html', context)
+
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email]
+
+        # Créer l'objet e-mail et envoyer
+        message = EmailMultiAlternatives(subject, text_content, email_from, recipient_list)
+        message.attach_alternative(html_content, "text/html")
+        message.send()
+        
+class PasswordResetViewSet(viewsets.ModelViewSet):
+    queryset = PasswordReset.objects.all()
+    serializer_class = PasswordResetSerializer
+
+    def create(self, request, *args, **kwargs):
+        email = request.data.get('email')
+
+        if email:
+            try:
+                user = User.objects.get(email=email)
+            except User.DoesNotExist:
+                return Response({'error': 'Un utilisateur avec cette adresse e-mail n\'existe pas.'}, status=status.HTTP_400_BAD_REQUEST)
+
+            token = secrets.token_urlsafe(32)
+            expiration_time = timezone.now() + timedelta(hours=1)
+            reset_instance = PasswordReset.objects.create(user=user, token=token, expiration_time=expiration_time)
+            serializer = self.get_serializer(reset_instance)
+            self.send_account_reset_password(email, token)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'error': 'Veuillez fournir une adresse e-mail valide.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    def send_account_reset_password(self, email,token):
+        subject = 'Réinitialisation de mot de passe'
+        text_content = 'Contenu du texte alternatif.'
+        context = {'token': token}
+        # Générer le contenu HTML à partir du modèle
+        html_content = render_to_string('email_template_reset_password.html', context)
+
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email]
+
+        # Créer l'objet e-mail et envoyer
+        message = EmailMultiAlternatives(subject, text_content, email_from, recipient_list)
+        message.attach_alternative(html_content, "text/html")
+        message.send()
+                            
+class PasswordResetConfirmAPIView(generics.GenericAPIView):
+    permission_classes = [permissions.AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        token = kwargs.get('token')
+        if not token:
+            return Response({'error': 'Le token est manquant.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            reset_instance = PasswordReset.objects.get(token=token)
+            if reset_instance.is_expired():
+                return Response({'error': 'Le temps de réinitialisation du mot de passe a expiré.'}, status=status.HTTP_400_BAD_REQUEST)
+            else:
+                new_password = request.data.get('new_password')
+                if not new_password:
+                    return Response({'error': 'Le nouveau mot de passe est manquant.'}, status=status.HTTP_400_BAD_REQUEST)
+
+                user = reset_instance.user
+                user.set_password(new_password)
+                user.save()
+                reset_instance.delete()
+                return Response({'success': 'Votre mot de passe a été réinitialisé avec succès.'}, status=status.HTTP_200_OK)
+        except PasswordReset.DoesNotExist:
+            return Response({'error': 'Le jeton de réinitialisation du mot de passe est invalide.'}, status=status.HTTP_400_BAD_REQUEST)
+                                    
 class ConversationViewSet(viewsets.ModelViewSet):
+
     queryset = Conversation.objects.all()
     serializer_class = ConversationSerializer
     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
-    
+
     def create(self, request, *args, **kwargs):
         # Déterminez si la conversation est initiée par un utilisateur ou un visiteur
         if not request.user.is_authenticated:
@@ -41,7 +150,8 @@ class ConversationViewSet(viewsets.ModelViewSet):
                 visitor_uuid = request.data.get('visitor_uuid')
                 if visitor_uuid:
                     visitor = get_object_or_404(Visitor, uuid=visitor_uuid)
-                    request.data['visitor'] = visitor.id
+                    request_data = request.data.copy()
+                    request_data['visitor'] = visitor
                 else:
                     # Handle the case where visitor_uuid is not provided
                     return Response({'error': 'Visitor UUID must be provided.'}, status=status.HTTP_400_BAD_REQUEST)
@@ -50,32 +160,44 @@ class ConversationViewSet(viewsets.ModelViewSet):
             except Visitor.DoesNotExist:
                 return Response({'error': 'No visitor found with the provided UUID.'}, status=status.HTTP_404_NOT_FOUND)
 
+            # Créez une nouvelle instance de Conversation
+            request_data.pop('visitor', None)
+            request_data.pop('visitor_uuid', None)
+            conversation = Conversation.objects.create(visitor=visitor, **request_data)
 
-            # Attribuez l'ID du visiteur à la conversation
-            request.data['visitor'] = visitor.id
-        else:
-            request.data['user'] = request.user.id
-
-        response = super().create(request, *args, **kwargs)
-        if response.status_code == 201:
-            conversation = self.serializer_class().Meta.model.objects.get(pk=response.data['id'])
+            # Créez un message initial pour la conversation
             initial_message = Message.objects.create(
                 conversation=conversation,
                 text="Bonjour ! À qui souhaites-tu offrir un cadeau ?",
                 type="AI"
             )
 
-            message_serializer = MessageSerializer(initial_message)
-
-            response_data = response.data
-            response_data['messages'] = [message_serializer.data]
+            # Créez une réponse avec le message initial
+            response_data = self.serializer_class(conversation).data
+            response_data['messages'] = [MessageSerializer(initial_message).data]
             return Response(response_data, status=status.HTTP_201_CREATED)
-        return response
+
+        else:
+            request.data['user'] = request.user.id
+            response = super().create(request, *args, **kwargs)
+            if response.status_code == 201:
+                conversation = self.serializer_class().Meta.model.objects.get(pk=response.data['id'])
+                initial_message = Message.objects.create(
+                    conversation=conversation,
+                    text="Bonjour ! À qui souhaites-tu offrir un cadeau ?",
+                    type="AI"
+                )
+
+                message_serializer = MessageSerializer(initial_message)
+
+                response_data = response.data
+                response_data['messages'] = [message_serializer.data]
+                return Response(response_data, status=status.HTTP_201_CREATED)
+            return response
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
-        # Assuming 'messages' is a reverse relation from Message to Conversation
         messages = Message.objects.filter(conversation=instance)
         message_serializer = MessageSerializer(messages, many=True)
         response_data = serializer.data
@@ -94,8 +216,10 @@ class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
     permission_classes = [IsAuthenticatedOrVisitorWithUUID]
-
+    
     def create(self, request, *args, **kwargs):
+        if 'visitor_uuid' in request.data:
+            del request.data['visitor_uuid']
         user_message = request.data.get('text', '')  # Obtenez le texte du message de l'utilisateur
         conversation_id = request.data.get('conversation', None)  # Obtenez l'ID de la conversation
 

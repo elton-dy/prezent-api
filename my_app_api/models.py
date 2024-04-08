@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
+from datetime import timedelta
+from django.conf import settings
+
 
 import uuid
 
@@ -36,7 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
-
+    
 class Visitor(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     browser = models.CharField(max_length=255, null=True, blank=True)
@@ -158,3 +161,17 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+class PasswordReset(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    token = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expiration_time = models.DateTimeField(default=timezone.now())
+
+    def is_expired(self):
+        return self.expiration_time < timezone.now()
+
+    def save(self, *args, **kwargs):
+        if not self.expiration_time:
+            self.expiration_time = timezone.now() + settings.PASSWORD_RESET_EXPIRATION_TIME
+        super().save(*args, **kwargs)

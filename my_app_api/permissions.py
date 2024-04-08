@@ -1,5 +1,5 @@
 from rest_framework.permissions import BasePermission
-from .models import Visitor
+from .models import Visitor,User
 
 class IsAuthenticatedOrVisitorWithUUID(BasePermission):
     def has_permission(self, request, view):

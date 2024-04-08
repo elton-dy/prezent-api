@@ -1,7 +1,8 @@
 from rest_framework import serializers
-from .models import User, Conversation, Message, Product, Favori, Visitor , Gender,Article
+from .models import User, Conversation, Message, Product, Favori, Visitor , Gender,Article, PasswordReset
 from .models import AgeRange, Occasion, Relationship, ActivityInterest, PersonalityPreference
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import get_user_model
 
 class UserSerializer(serializers.ModelSerializer):
@@ -22,10 +23,6 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
-class ConversationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Conversation
-        fields = '__all__'  # Sérialise tous les champs du modèle Conversation
 
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
@@ -42,6 +39,13 @@ class MessageSerializer(serializers.ModelSerializer):
         model = Message
         fields = '__all__'
 
+class ConversationSerializer(serializers.ModelSerializer):
+    messages = MessageSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Conversation
+        fields = ['id', 'name', 'user', 'visitor', 'timestamp', 'messages']
+        
 class AgeRangeSerializer(serializers.ModelSerializer):
     class Meta:
         model = AgeRange
@@ -142,6 +146,11 @@ class FavoriSerializer(serializers.ModelSerializer):
         model = Favori
         fields = '__all__'
 
+class PasswordResetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PasswordReset
+        fields = '__all__'
+
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
@@ -152,3 +161,13 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['id'] = user.id
 
         return token
+    
+class PasswordResetConfirmSerializer(serializers.Serializer):
+    new_password = serializers.CharField(max_length=128, write_only=True)
+
+    def validate(self, attrs):
+        user = self.context['user']
+        form = PasswordChangeForm(user, {'new_password1': attrs['new_password'], 'new_password2': attrs['new_password']})
+        if not form.is_valid():
+            raise serializers.ValidationError(form.errors)
+        return attrs

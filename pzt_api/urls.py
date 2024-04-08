@@ -20,6 +20,7 @@ from rest_framework.routers import DefaultRouter
 from my_app_api.views import UserViewSet, ConversationViewSet, MessageViewSet,ProductViewSet, FavoriViewSet , VisitorViewSet ,LoginView, ArticleViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from my_app_api.serializers import CustomTokenObtainPairSerializer
+from my_app_api.views import PasswordResetViewSet, PasswordResetConfirmAPIView
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -32,8 +33,10 @@ router.register(r'articles', ArticleViewSet)
 
 urlpatterns = [
     path('api/', include([
-        path('api/login/', LoginView.as_view(), name='login'),
-        path('token/', TokenObtainPairView.as_view(serializer_class=CustomTokenObtainPairSerializer), name='token_obtain_pair'),
+        path('password-reset-confirm/<str:token>/', PasswordResetConfirmAPIView.as_view(), name='password-reset-confirm'),
+        path('password_reset/', PasswordResetViewSet.as_view({'post': 'create'}), name='password_reset'),
+        path('login/', LoginView.as_view(), name='login'),
+        path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
         path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
         path('', include(router.urls)),
     ])),
