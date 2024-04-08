@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import User, Conversation, Message, Product, Favori, Visitor , Gender,Article, PasswordReset
 from .models import AgeRange, Occasion, Relationship, ActivityInterest, PersonalityPreference
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import get_user_model
 
 class UserSerializer(serializers.ModelSerializer):
@@ -160,3 +161,13 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['id'] = user.id
 
         return token
+    
+class PasswordResetConfirmSerializer(serializers.Serializer):
+    new_password = serializers.CharField(max_length=128, write_only=True)
+
+    def validate(self, attrs):
+        user = self.context['user']
+        form = PasswordChangeForm(user, {'new_password1': attrs['new_password'], 'new_password2': attrs['new_password']})
+        if not form.is_valid():
+            raise serializers.ValidationError(form.errors)
+        return attrs

@@ -27,6 +27,11 @@ from django.contrib.auth.models import User
 from django.utils.crypto import get_random_string
 from django.urls import reverse
 from django.contrib.auth import get_user_model
+from my_app_api.serializers import PasswordResetConfirmSerializer
+from django.contrib.auth.forms import PasswordChangeForm
+from django.utils import timezone
+from rest_framework import generics, permissions, status
+from datetime import timedelta
 import secrets
 import sys
 import re
@@ -77,15 +82,60 @@ class PasswordResetViewSet(viewsets.ModelViewSet):
         email = request.data.get('email')
 
         if email:
-            user = get_object_or_404(UserManager().get_queryset(), email=email)
+            try:
+                user = User.objects.get(email=email)
+            except User.DoesNotExist:
+                return Response({'error': 'Un utilisateur avec cette adresse e-mail n\'existe pas.'}, status=status.HTTP_400_BAD_REQUEST)
+
             token = secrets.token_urlsafe(32)
-            reset_instance = PasswordReset.objects.create(user=user, token=token)
+            expiration_time = timezone.now() + timedelta(hours=1)
+            reset_instance = PasswordReset.objects.create(user=user, token=token, expiration_time=expiration_time)
             serializer = self.get_serializer(reset_instance)
+            self.send_account_reset_password(email, token)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'Veuillez fournir une adresse e-mail valide.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    def send_account_reset_password(self, email,token):
+        subject = 'Réinitialisation de mot de passe'
+        text_content = 'Contenu du texte alternatif.'
+        context = {'token': token}
+        # Générer le contenu HTML à partir du modèle
+        html_content = render_to_string('email_template_reset_password.html', context)
+
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email]
+
+        # Créer l'objet e-mail et envoyer
+        message = EmailMultiAlternatives(subject, text_content, email_from, recipient_list)
+        message.attach_alternative(html_content, "text/html")
+        message.send()
                             
-                            
+class PasswordResetConfirmAPIView(generics.GenericAPIView):
+    permission_classes = [permissions.AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        token = kwargs.get('token')
+        if not token:
+            return Response({'error': 'Le token est manquant.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            reset_instance = PasswordReset.objects.get(token=token)
+            if reset_instance.is_expired():
+                return Response({'error': 'Le temps de réinitialisation du mot de passe a expiré.'}, status=status.HTTP_400_BAD_REQUEST)
+            else:
+                new_password = request.data.get('new_password')
+                if not new_password:
+                    return Response({'error': 'Le nouveau mot de passe est manquant.'}, status=status.HTTP_400_BAD_REQUEST)
+
+                user = reset_instance.user
+                user.set_password(new_password)
+                user.save()
+                reset_instance.delete()
+                return Response({'success': 'Votre mot de passe a été réinitialisé avec succès.'}, status=status.HTTP_200_OK)
+        except PasswordReset.DoesNotExist:
+            return Response({'error': 'Le jeton de réinitialisation du mot de passe est invalide.'}, status=status.HTTP_400_BAD_REQUEST)
+                                    
 class ConversationViewSet(viewsets.ModelViewSet):
 
     queryset = Conversation.objects.all()
