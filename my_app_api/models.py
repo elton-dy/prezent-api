@@ -91,9 +91,6 @@ class Gender(models.Model):
     def __str__(self):
         return self.name
 
-    def __str__(self):
-        return f'Favori {self.id} - {self.product.name} par {self.user.username}'
-
 class AgeRange(models.Model):
     age_range = models.CharField(max_length=255)
 
@@ -148,7 +145,10 @@ class Favori(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = (('user', 'product'),)  # Cette contrainte assure qu'un utilisateur ne peut pas marquer le même produit comme favori plusieurs fois
+        unique_together = (('user', 'product'),)
+
+    def __str__(self):
+        return f'Favori {self.id} - {self.product.name} par {self.user.username}'
 
 class Article(models.Model):
     title = models.CharField(max_length=255)
