@@ -55,7 +55,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
         # Envoyer l'e-mail de création de compte
         self.send_account_creation_email(serializer.data['email'], serializer.data['first_name'])
-
+        
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
     
     def send_account_creation_email(self, email, first_name):

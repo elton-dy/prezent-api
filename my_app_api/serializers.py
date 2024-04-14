@@ -86,34 +86,36 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = '__all__'  # Incluez les champs associés comme des sous-objets sérialisés
+        fields = '__all__'
+
     def create(self, validated_data):
         # Extraire les données relatives aux relations plusieurs-à-plusieurs
-        age_ranges_data = validated_data.pop('age_ranges', [])
-        occasions_data = validated_data.pop('occasions', [])
-        relationships_data = validated_data.pop('relationships', [])
-        activities_interests_data = validated_data.pop('activities_interests', [])
-        personalities_preferences_data = validated_data.pop('personalities_preferences', [])
+        print(f"Validated data: {validated_data}")
+        age_ranges = validated_data.pop('age_ranges', [])
+        occasions = validated_data.pop('occasions', [])
+        relationships = validated_data.pop('relationships', [])
+        activities_interests = validated_data.pop('activities_interests', [])
+        personalities_preferences = validated_data.pop('personalities_preferences', [])
 
         # Créer l'instance Product
         product = Product.objects.create(**validated_data)
 
         # Ajouter les relations
-        self._set_relations(product, AgeRange, age_ranges_data)
-        self._set_relations(product, Occasion, occasions_data)
-        self._set_relations(product, Relationship, relationships_data)
-        self._set_relations(product, ActivityInterest, activities_interests_data)
-        self._set_relations(product, PersonalityPreference, personalities_preferences_data)
+        product.age_ranges.set(age_ranges)
+        product.occasions.set(occasions)
+        product.relationships.set(relationships)
+        product.activities_interests.set(activities_interests)
+        product.personalities_preferences.set(personalities_preferences)
 
         return product
 
     def update(self, instance, validated_data):
         # Extraire les données relatives aux relations plusieurs-à-plusieurs
-        age_ranges_data = validated_data.pop('age_ranges', [])
-        occasions_data = validated_data.pop('occasions', [])
-        relationships_data = validated_data.pop('relationships', [])
-        activities_interests_data = validated_data.pop('activities_interests', [])
-        personalities_preferences_data = validated_data.pop('personalities_preferences', [])
+        age_ranges = validated_data.pop('age_ranges', [])
+        occasions = validated_data.pop('occasions', [])
+        relationships = validated_data.pop('relationships', [])
+        activities_interests = validated_data.pop('activities_interests', [])
+        personalities_preferences = validated_data.pop('personalities_preferences', [])
 
         # Mettre à jour les attributs de l'instance Product
         for attr, value in validated_data.items():
@@ -121,22 +123,22 @@ class ProductSerializer(serializers.ModelSerializer):
         instance.save()
 
         # Mettre à jour les relations
-        self._set_relations(instance, AgeRange, age_ranges_data)
-        self._set_relations(instance, Occasion, occasions_data)
-        self._set_relations(instance, Relationship, relationships_data)
-        self._set_relations(instance, ActivityInterest, activities_interests_data)
-        self._set_relations(instance, PersonalityPreference, personalities_preferences_data)
+        instance.age_ranges.set(age_ranges)
+        instance.occasions.set(occasions)
+        instance.relationships.set(relationships)
+        instance.activities_interests.set(activities_interests)
+        instance.personalities_preferences.set(personalities_preferences)
 
         return instance
 
-    def _set_relations(self, instance, model, related_data):
+    def _set_relations(self, instance, model, related_data, field_name):
         # Supprimer toutes les relations existantes
-        getattr(instance, model.__name__.lower() + 's').clear()
+        getattr(instance, field_name).clear()
 
         # Ajouter les nouvelles relations
         for item_data in related_data:
             item, created = model.objects.get_or_create(**item_data)
-            getattr(instance, model.__name__.lower() + 's').add(item)
+            getattr(instance, field_name).add(item)
 
 class FavoriSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField()
