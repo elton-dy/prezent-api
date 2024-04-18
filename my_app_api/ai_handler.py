@@ -22,7 +22,7 @@ class DatabaseMemory:
 def set_custom_prompt():
     custom_prompt_template = """
     Respond in French.
-    Act as an advisor to find the ideal gift. important ask specific voice questions to the user to identify the perfect gift, focusing on understanding the personality of the recipient and give only one gift at a time.
+    Act as an advisor to find the ideal gift. important ask specific voice questions to the user to identify the perfect gift, focusing on understanding the age , the budget,the personality, of the recipient and give only one gift at a time.
     First, base your suggestions on the conversation history, then on the context.
     Use the following context (enclosed in <ctx></ctx>) and the conversation history (enclosed in <hs></hs>) to respond,
     if the budget is unlimited, choose the most expensive product 
@@ -48,7 +48,7 @@ def get_vectorstore():
     return Chroma(persist_directory="data/db/news", embedding_function=OpenAIEmbeddings())
 
 def load_llm():
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo-0125", temperature=0.6)
+    llm = ChatOpenAI(model_name="gpt-4-turbo-2024-04-09", temperature=0.6)
     return llm
 
 def retrieval_qa_chain(llm,db,history):
