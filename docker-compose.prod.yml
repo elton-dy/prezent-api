@@ -4,7 +4,7 @@ services:
   # Service pour l'application Django (API backend)
   api:
     build:
-      context: ./backend  # Assurez-vous que c'est le chemin correct vers le Dockerfile.prod du back-end Django
+      context: .  # Assurez-vous que c'est le chemin correct vers le Dockerfile.prod du back-end Django
       dockerfile: Dockerfile.prod
     container_name: api
     command: gunicorn pzt_api.wsgi:application --bind 0.0.0.0:8000
@@ -31,7 +31,7 @@ services:
   # Service pour l'application Vue.js (front-end)
   client:
     build:
-      context: ./frontend  # Chemin vers le Dockerfile.prod du front-end Vue.js
+      context: ../prezent-vue  # Chemin vers le Dockerfile.prod du front-end Vue.js
       dockerfile: Dockerfile.prod
     container_name: client
     expose:
