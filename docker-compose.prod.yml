@@ -14,10 +14,13 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     expose:
       - "8000"
-    networks:
-      - app-network
     depends_on:
       - postgres-db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.rule=Host(`1-prezent.com`) && PathPrefix(`/api`)"
+      - "traefik.http.routers.api.entrypoints=websecure"
+      - "traefik.http.routers.api.tls.certresolver=myresolver"
 
   # Service pour la base de données PostgreSQL
   postgres-db:
@@ -29,8 +32,6 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - postgres:/var/lib/postgresql/data/
-    networks:
-      - app-network
 
   # Service pour l'application Vue.js (front-end)
   client:
@@ -38,28 +39,47 @@ services:
       context: ../prezent-vue  # Chemin vers le Dockerfile.prod du front-end Vue.js
       dockerfile: Dockerfile.prod
     container_name: client
-    ports:
-      - "8080:80"  # Mappe le port externe 8080 au port interne 80 du conteneur
-    networks:
-      - app-network
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.client.rule=Host(`1-prezent.com`)"
+      - "traefik.http.routers.client.entrypoints=websecure"
+      - "traefik.http.routers.client.tls.certresolver=myresolver"
 
-  # Service pour Nginx
-  nginx:
-    image: nginx:stable-alpine
-    container_name: nginx
+  # # Service pour Nginx
+  # nginx:
+  #   image: nginx:stable-alpine
+  #   container_name: nginx
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   depends_on:
+  #     - client
+  #     - api
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro  # Montre le fichier de configuration nginx.conf
+  #     - /etc/letsencrypt:/etc/letsencrypt  # Montre le dossier des certificats SSL si vous utilisez HTTPS
+
+  traefik:
+    image: "traefik:v3.1"
+    container_name: "traefik"
+    command:
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entryPoints.websecure.address=:443"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      #- "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.myresolver.acme.email=eltondoisy@gmail.com"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
     ports:
-      - "80:80"
       - "443:443"
-    depends_on:
-      - client
-      - api
+      - "8080:8080"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro  # Montre le fichier de configuration nginx.conf
-      - /etc/letsencrypt:/etc/letsencrypt  # Montre le dossier des certificats SSL si vous utilisez HTTPS
+      - "./letsencrypt:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
 
 volumes:
   postgres:
-
-networks:
-  app-network:
-    driver: bridge
