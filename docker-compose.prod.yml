@@ -1,5 +1,23 @@
 version: '3.9'
+
 services:
+  # Service pour l'application Django (API backend)
+  api:
+    build:
+      context: ./backend  # Assurez-vous que c'est le chemin correct vers le Dockerfile.prod du back-end Django
+      dockerfile: Dockerfile.prod
+    container_name: api
+    command: gunicorn pzt_api.wsgi:application --bind 0.0.0.0:8000
+    environment:
+      - POSTGRES_NAME=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    expose:
+      - "8000"
+    depends_on:
+      - postgres-db
+
+  # Service pour la base de données PostgreSQL
   postgres-db:
     image: postgres:13
     container_name: postgres-db
@@ -9,33 +27,29 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - postgres:/var/lib/postgresql/data/
-    # Les ports ne doivent pas être exposés en production pour des raisons de sécurité
-    # ports:
-    #   - '5432:5432'
 
-  api:
+  # Service pour l'application Vue.js (front-end)
+  client:
     build:
-      context: .
+      context: ./frontend  # Chemin vers le Dockerfile.prod du front-end Vue.js
       dockerfile: Dockerfile.prod
-    container_name: api
-    # Utiliser Gunicorn ou un autre serveur WSGI pour la production au lieu de runserver
-    command: gunicorn pzt_api.wsgi:application --bind 0.0.0.0:8000
-    environment:
-      - POSTGRES_NAME=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    ports:
-      - '8000:8000'
-    # Les volumes de développement peuvent être retirés en production
-    volumes:
-      - ./data/db:/api/data/db
-    depends_on:
-      - postgres-db
+    container_name: client
+    expose:
+      - "80"
 
-  # PgAdmin n'est généralement pas nécessaire en production, à moins que vous n'ayez besoin de gestion de base de données
-  # pg-admin:
-  #   ...
+  # Service pour Nginx
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - client
+      - api
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro  # Montre le fichier de configuration nginx.conf
+      - /etc/letsencrypt:/etc/letsencrypt  # Montre le dossier des certificats SSL si vous utilisez HTTPS
 
 volumes:
   postgres:
-  # my-data: (si vous utilisez PgAdmin)
